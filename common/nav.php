@@ -13,6 +13,9 @@
           <li class="nav-item"><a href="doctor.php" class="nav-link">Doctors</a></li>
           <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="user-profile.php" class="nav-link">User</a></li>
+          <li class="nav-item"><a href="doctor-profile.php" class="nav-link">Doctor</a></li>
+          <li class="nav-item"><a href="appointment.php" class="nav-link">Appointment</a></li>
           <li class="nav-item cta"><a href="contact.php" class="nav-link" data-toggle="modal" data-target="#modalRegister"><span>Register</span></a></li>
             <li class="nav-item cta"><a href="contact.php" class="nav-link" data-toggle="modal" data-target="#modalLogin"><span>Login</span></a></li>
         </ul>
