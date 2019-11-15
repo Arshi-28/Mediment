@@ -9,12 +9,12 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="departments.php" class="nav-link">Departments</a></li>
+          <li class="nav-item"><a href="departments.php" class="nav-link">Search Doctors</a></li>
           <li class="nav-item"><a href="doctor.php" class="nav-link">Doctors</a></li>
-          <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="blog.php" class="nav-link">Doctor Map</a></li>
           <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a href="user-profile.php" class="nav-link">User</a></li>
-          <li class="nav-item"><a href="doctor-profile.php" class="nav-link">Doctor</a></li>
+          <li class="nav-item"><a href="user-profile.php" class="nav-link">User Profile</a></li>
+          <li class="nav-item"><a href="doctor-profile.php" class="nav-link">Doctor Profile</a></li>
           <li class="nav-item"><a href="appointment.php" class="nav-link">Appointment</a></li>
           <li class="nav-item cta"><a href="contact.php" class="nav-link" data-toggle="modal" data-target="#modalRegister"><span>Register</span></a></li>
             <li class="nav-item cta"><a href="contact.php" class="nav-link" data-toggle="modal" data-target="#modalLogin"><span>Login</span></a></li>
