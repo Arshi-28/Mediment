@@ -28,10 +28,10 @@
           <div class="text col-lg-6 ftco-animate">
             <div class="text-inner align-self-start">
               
-              <h3>Welcome to Mediment Appointment System, since 1898 established Far far away.</h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+              <h3>Welcome to Mediment Appointment Center, your trusted place for appointments</h3>
+              <p>We are a Web Application who are aimed to help you find your doctor with a click from your home. Gone are the days when you had to physically go get an appointment. You can now search for doctors by name or speciality from home using our app,set appointments, and also can use our symptom checker. </p>
 
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+              <p>We at Mediment, provide you with an extensive list of doctors across all hospitals, who you can get an appoinment with, through us. No charges required. </p>
             </div>
           </div>
         </div>
@@ -201,8 +201,8 @@
     	<div class="container">
     		<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-            <h2 class="mb-4">Some fun facts</h2>
-            <span class="subheading">Far far away, behind the word mountains, far from the countries</span>
+            <h2 class="mb-4">Some Facts about us</h2>
+            <span class="subheading">We aim to bring hospitals to your home</span>
           </div>
         </div>
     		<div class="row justify-content-center">
@@ -212,7 +212,7 @@
 		            <div class="block-18 text-center">
 		              <div class="text">
 		                <strong class="number" data-number="60">0</strong>
-		                <span>Hospital</span>
+		                <span>Hospitals</span>
 		              </div>
 		            </div>
 		          </div>
@@ -220,7 +220,7 @@
 		            <div class="block-18 text-center">
 		              <div class="text">
 		                <strong class="number" data-number="200">0</strong>
-		                <span>Doctors</span>
+		                <span>Patients</span>
 		              </div>
 		            </div>
 		          </div>
@@ -228,7 +228,7 @@
 		            <div class="block-18 text-center">
 		              <div class="text">
 		                <strong class="number" data-number="100">0</strong>
-		                <span>Clinics</span>
+		                <span>Doctors</span>
 		              </div>
 		            </div>
 		          </div>
