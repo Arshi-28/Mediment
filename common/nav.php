@@ -16,6 +16,7 @@
           <li class="nav-item"><a href="user-profile.php" class="nav-link">User Profile</a></li>
           <li class="nav-item"><a href="doctor-profile.php" class="nav-link">Doctor Profile</a></li>
           <li class="nav-item"><a href="appointment.php" class="nav-link">Appointment</a></li>
+          <li class="nav-item"><a href="your_appointments.php" class="nav-link">Your Appointments</a></li>
           <li class="nav-item cta"><a href="contact.php" class="nav-link" data-toggle="modal" data-target="#modalRegister"><span>Register</span></a></li>
             <li class="nav-item cta"><a href="contact.php" class="nav-link" data-toggle="modal" data-target="#modalLogin"><span>Login</span></a></li>
         </ul>

@@ -63,7 +63,7 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Registrations</h4>
+                                <h4 class="card-title">List of Registrations to Approve</h4>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>

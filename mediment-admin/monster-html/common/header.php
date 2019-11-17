@@ -14,10 +14,6 @@
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span>
-                            <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                        </span>
                     </a>
                 </div>
                 <!-- ============================================================== -->
