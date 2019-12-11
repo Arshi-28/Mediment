@@ -63,9 +63,21 @@
                             <div class="card-block">
                                 <form class="form-horizontal form-material">
                                     <div class="form-group">
-                                        <label class="col-md-12">Full Name</label>
+                                        <label class="col-md-12">First Name</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
+                                            <input type="text" placeholder="Johnathan" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Last Name</label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Doe" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-username" class="col-md-12">User Name</label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="johnathan123" class="form-control form-control-line" name="example-username" id="example-email">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -75,9 +87,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-12">Password</label>
+                                        <label class="col-md-12">Age</label>
                                         <div class="col-md-12">
-                                            <input type="password" value="password" class="form-control form-control-line">
+                                            <input type="number" value="Age" class="form-control form-control-line">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -87,26 +99,30 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-12">Message</label>
+                                        <label for="example-occupation" class="col-md-12">Occupation</label>
                                         <div class="col-md-12">
-                                            <textarea rows="5" class="form-control form-control-line"></textarea>
+                                            <input type="text" class="form-control form-control-line" name="occupation" id="example-occupation">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-12">Select Country</label>
-                                        <div class="col-sm-12">
-                                            <select class="form-control form-control-line">
-                                                <option>London</option>
-                                                <option>India</option>
-                                                <option>Usa</option>
-                                                <option>Canada</option>
-                                                <option>Thailand</option>
-                                            </select>
+                                        <label for="example-weight" class="col-md-12">Weight</label>
+                                        <div class="col-md-12">
+                                            <input type="number" class="form-control form-control-line" name="weight" id="example-weight">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-gender" class="col-md-12">Gender</label>
+                                        <div class="col-md-12">
+                                            <select class="form-control form-control-line" id="example-gender" name="gender">
+                                                <option value="0">Male</option>
+                                                <option value="1">Female</option>
+                                                <option value="2">Other</option>
+                                            </select>             
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <button class="btn btn-success">Update Profile</button>
+                                            <input type="submit" value="Update Profile" class="btn btn-success">
                                         </div>
                                     </div>
                                 </form>
