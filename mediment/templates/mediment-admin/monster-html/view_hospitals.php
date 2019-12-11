@@ -68,16 +68,11 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>User ID</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                                <th>Email</th>
-                                                <th>Contact No.</th>
-                                                <th>Age</th>
-                                                <th>Occupation</th>
-                                                <th>Weight</th>
-                                                <th>Gender</th>
+                                                <th>Hospital ID</th>
+                                                <th>Hospital Name</th>
+                                                <th>Contact Number</th>
+                                                <th>Address</th>
+                                                <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
                                         </thead>
@@ -87,12 +82,7 @@
                                                 <td>Deshmukh</td>
                                                 <td>Prohaska</td>
                                                 <td>@Genelia</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
                                         </tbody>

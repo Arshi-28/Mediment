@@ -45,10 +45,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">View Users</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Add Doctors</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">View Users</li>
+                            <li class="breadcrumb-item active">Add Doctors</li>
                         </ol>
                     </div>
                 </div>
@@ -58,50 +58,35 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <div class="row">
-                    <!-- column -->
-                    <div class="col-sm-12">
-                        <div class="card">
+                <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">All Users</h4>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>User ID</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                                <th>Email</th>
-                                                <th>Contact No.</th>
-                                                <th>Age</th>
-                                                <th>Occupation</th>
-                                                <th>Weight</th>
-                                                <th>Gender</th>
-                                                <th>Delete</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <form class="form-horizontal form-material" action="add_hospitals_process.php" method="post">
+                                    <div class="form-group">
+                                        <label for="fname" class="col-md-12">Hospital Name</label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="fname" name="firstname">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Phone No</label>
+                                        <div class="col-md-12">
+                                            <input type="tel" placeholder="0171234567890" class="form-control form-control-line" name="contact">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Address</label>
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control form-control-line" name="address">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input type="submit" class="btn btn-success" value="Add Hospital">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </div>
-                </div>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->

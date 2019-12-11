@@ -17,7 +17,13 @@
                             <a href="view_users.php" class="waves-effect"><i class="fa fa fa-id-card-o  m-r-10" aria-hidden="true"></i>View Users</a>
                         </li>
                         <li>
-                            <a href="add_doctors.php" class="waves-effect"><i class="fa  fa-user-md" aria-hidden="true"></i>Add Doctors</a>
+                            <a href="add_hospitals.php" class="waves-effect"><i class="fa fa-plus-square" aria-hidden="true"></i>Add Hospital</a>
+                        </li>
+                        <li>
+                            <a href="view_hospitals.php" class="waves-effect"><i class="fa fa-hospital-o" aria-hidden="true"></i>View Hospitals</a>
+                        </li>
+                        <li>
+                            <a href="add_doctors.php" class="waves-effect"><i class="fa  fa-user-md" aria-hidden="true"></i>Add Doctor</a>
                         </li>
                         <li>
                             <a href="view_doctors.php" class="waves-effect"><i class="fa fa-users m-r-10" aria-hidden="true"></i>View Doctors</a>
