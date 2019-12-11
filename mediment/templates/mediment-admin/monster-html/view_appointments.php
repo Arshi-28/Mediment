@@ -68,10 +68,13 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
+                                                <th>Appointment ID</th>
+                                                <th>Doctor ID</th>
+                                                <th>User ID</th>
+                                                <th>Date</th>
+                                                <th>Time</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -80,37 +83,11 @@
                                                 <td>Deshmukh</td>
                                                 <td>Prohaska</td>
                                                 <td>@Genelia</td>
+                                                <td></td>
+                                                <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
+                                                <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
                                             <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>

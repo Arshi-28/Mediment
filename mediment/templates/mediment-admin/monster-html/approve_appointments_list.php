@@ -68,10 +68,11 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Age</th>
+                                                <th>Appointment ID</th>
+                                                <th>Username</th>
+                                                <th>Doctor ID</th>
+                                                <th>Date</th>
+                                                <th>Time</th>
                                                 <th>Check</th>
                                             </tr>
                                         </thead>
@@ -81,27 +82,7 @@
                                                 <td>Deshmukh</td>
                                                 <td>Prohaska</td>
                                                 <td>11</td>
-                                                <td><a href="approve_appointments.php"><i class="fa fa-check-square m-r-10" aria-hidden="true"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>22</td>
-                                                <td><a href="approve_appointments.php"><i class="fa fa-check-square m-r-10" aria-hidden="true"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>33</td>
-                                                <td><a href="approve_appointments.php"><i class="fa fa-check-square m-r-10" aria-hidden="true"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>44</td>
+                                                <td></td>
                                                 <td><a href="approve_appointments.php"><i class="fa fa-check-square m-r-10" aria-hidden="true"></i></a></td>
                                             </tr>
                                         </tbody>

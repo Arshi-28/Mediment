@@ -68,7 +68,7 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Username</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
                                                 <th>Age</th>

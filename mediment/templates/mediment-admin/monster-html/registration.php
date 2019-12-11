@@ -123,6 +123,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-12">
                                             <input type="submit" value="Approve User" class="btn btn-success">
+                                            <input type="button" value="Do Not Approve" class="btn btn-danger">
                                         </div>
                                     </div>
                                 </form>
