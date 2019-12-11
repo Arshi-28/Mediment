@@ -60,52 +60,55 @@
                 <!-- ============================================================== -->
                 <div class="card">
                             <div class="card-block">
-                                <form class="form-horizontal form-material">
+                                <form class="form-horizontal form-material" action="add_doctors_process.php" method="post">
                                     <div class="form-group">
-                                        <label class="col-md-12">Full Name</label>
+                                        <label for="fname" class="col-md-12">First Name</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
+                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="fname" name="firstname">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="example-email" class="col-md-12">Email</label>
+                                        <label for="lname" class="col-md-12">Last Name</label>
                                         <div class="col-md-12">
-                                            <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email">
+                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="lname" name="lastname">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-12">Password</label>
-                                        <div class="col-md-12">
-                                            <input type="password" value="password" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Phone No</label>
-                                        <div class="col-md-12">
-                                            <input type="text" placeholder="123 456 7890" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Message</label>
-                                        <div class="col-md-12">
-                                            <textarea rows="5" class="form-control form-control-line"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-12">Select Country</label>
+                                        <label class="col-sm-12">Select Specialization</label>
                                         <div class="col-sm-12">
-                                            <select class="form-control form-control-line">
-                                                <option>London</option>
-                                                <option>India</option>
-                                                <option>Usa</option>
-                                                <option>Canada</option>
-                                                <option>Thailand</option>
+                                            <select class="form-control form-control-line" name="specialization">
+                                                <option value="">Select specialization</option>
+                                                <option value="0">Dermatology</option>
+                                                <option value="1">Radiology</option>
+                                                <option value="2">Medicine</option>
+                                                <option value="3">Neurology</option>
+                                                <option value="4">Gynaecology</option>
+                                                <option value="5">Surgery</option>
+                                                <option value="6">Opthamology</option>
+                                                <option value="7">Pathology</option>
+                                                <option value="8">Pediatrics</option>
+                                                <option value="9">Cardiology</option>
+                                                <option value="10">Psychiatry</option>
+                                                <option value="11">Orthopedics</option>
+                                                <option value="12">Oncology</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label class="col-md-12">Education</label>
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control form-control-line" name="education">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Hospital ID</label>
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control form-control-line" name="hospital">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <div class="col-sm-12">
-                                            <button class="btn btn-success">Update Profile</button>
+                                            <input type="submit" class="btn btn-success" value="Add Doctor">
                                         </div>
                                     </div>
                                 </form>
@@ -121,41 +124,9 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center">
-                © 2017 Monster Admin by wrappixel.com
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="../assets/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/plugins/bootstrap/js/tether.min.js"></script>
-    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
-    <!--Wave Effects -->
-    <script src="js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
-    <!--stickey kit -->
-    <script src="../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <!--Custom JavaScript -->
-    <script src="js/custom.min.js"></script>
-    <!-- ============================================================== -->
-    <!-- Style switcher -->
-    <!-- ============================================================== -->
-    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+            <?php
+            include('common/footer.php');
+            ?>
 </body>
 
 </html>
