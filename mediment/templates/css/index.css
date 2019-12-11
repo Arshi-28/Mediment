@@ -107,7 +107,7 @@ body {
 
 
 
-input[type=text], select, textarea {
+input[type=text],input[type=password],input[type=date],input[type=time] select, textarea {
   width: 100%; 
   padding: 12px; 
   border: 1px solid #ccc;
@@ -117,6 +117,8 @@ input[type=text], select, textarea {
   margin-bottom: 16px; 
   resize: vertical 
 }
+
+input[type=password]
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
