@@ -1,5 +1,10 @@
 <?php
     include('common/html_head.php');
+    include('common/db_connection.php');
+    $sql="SELECT * FROM hospitals WHERE isdelete='0' ORDER BY hospitalid";
+    
+    $result=mysqli_query($connect,$sql);
+    $num_of_rows = mysqli_num_rows($result);
 ?>
 
 <body class="fix-header card-no-border">
@@ -63,6 +68,10 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-block">
+                                <?php
+
+                                  if($num_of_rows > 0){
+                                  ?>
                                 <h4 class="card-title">All Hospitals</h4>
                                 <div class="table-responsive">
                                     <table class="table">
@@ -77,18 +86,34 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            while($row=mysqli_fetch_assoc($result)){
+                                              ?>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
+                                                <td><?php echo $row['hospitalid']; ?></td>
+                                                <td><?php echo ucwords(strtolower($row['name'])); ?></td>
+                                                <td><?php echo $row['contact']; ?></td>
+                                                <td><?php echo $row['address']; ?></td>
                                                 <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+                            <?php 
+                              }
+                              else if($num_of_rows == 0){
+                               ?>
+                               <div class='alert alert-danger'>
+                                No data found.
+                               </div>
+                               <?php
+                                }
+                               ?>
                         </div>
                     </div>
                 </div>

@@ -45,10 +45,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Add Hospitals</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">View Diseases</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Add Hospitals</li>
+                            <li class="breadcrumb-item active">View Diseases</li>
                         </ol>
                     </div>
                 </div>
@@ -58,41 +58,40 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <?php
-                if (isset($_GET['result'])&& $_GET['result']=='success'){
-                  echo "<div class='alert alert-success'>Data has been submitted</div>";
-                }
-
-                ?>
-                <div class="card">
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-sm-12">
+                        <div class="card">
                             <div class="card-block">
-                                <form class="form-horizontal form-material" action="add_hospitals_process.php" method="post">
-                                    <div class="form-group">
-                                        <label for="fname" class="col-md-12">Hospital Name</label>
-                                        <div class="col-md-12">
-                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="fname" name="name">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Phone No</label>
-                                        <div class="col-md-12">
-                                            <input type="tel" placeholder="0171234567890" class="form-control form-control-line" name="contact">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Address</label>
-                                        <div class="col-md-12">
-                                            <input type="text" class="form-control form-control-line" name="address">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <input type="submit" class="btn btn-success" value="Add Hospital">
-                                        </div>
-                                    </div>
-                                </form>
+                                <h4 class="card-title">List of Diseases</h4>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Disease ID</th>
+                                                <th>Name</th>
+                                                <th>Detail</th>
+                                                <th>Specialization</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Deshmukh</td>
+                                                <td>Prohaska</td>
+                                                <td>@Genelia</td>
+                                                <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
+                                                <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->

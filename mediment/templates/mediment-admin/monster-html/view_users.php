@@ -68,7 +68,6 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>User ID</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
                                                 <th>Username</th>
@@ -87,7 +86,6 @@
                                                 <td>Deshmukh</td>
                                                 <td>Prohaska</td>
                                                 <td>@Genelia</td>
-                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
