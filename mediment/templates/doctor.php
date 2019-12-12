@@ -4,100 +4,26 @@
     <meta charset="UTF-8">
     <title>Medico</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/doctor.css">
     <link rel="stylesheet" href="css/circle.css">
 
 
 
 </head>
 <body>
-        
      
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Medico</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse"></div>
-       <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                   <a class="nav-link" href="#">Doctors</a>
-              </li>
-              <li class="nav-item">
-                   <a class="nav-link" href="#">Contact</a>
-              </li>
-              
-          </ul>
-    
-        <form action="" class="form-inline my-2 my-lg-0">
-            <button class="btn menu-right-btn border" type="submit">
-                Register                
-            </button>
-             <button class="btn menu-left-btn border" type="submit">
-                Login               
-            </button>
-        </form>
-     </div>
-    </nav>
+      <?php
+        include('common/navbar.php');
+        ?>
 </header>
    
    <main>
-       <div class="container-fluid p-0">
-           <div class="site-content">
-               <div class="d-flex justify-content-center">
-                    <div class="d-flex flex-column">
-                        <h1 class="site-title">Welcome to Medico</h1><br>
-                        <p class="site-desc">Find the best doctors brand medical suggestions at the click of a button</p>
-                        
-                        <div class="d-flex flex-row">
-                            <input type="button" value="Search Now" class="btn site-btn1 px-4 py-3 mr-4">
-                        </div>
-                    </div>
-               </div>
-           </div>
-       </div>
-       
+     
        <div class="section-1">
            <div class="container text-center">
-               <h1 class="heading-1">About</h1>
-               <p class="para-1">We are a web application who will help you to find a doctor appropriate for your specific condition. Gone are the days of being burdened with the problem of having to physically go and set an appointment with your doctor. You can set your appointment with your preferred doctor with just a click. Let us know your symptoms and we'll match it up with a probable disease and show you list of doctors appropriate for treating your disease.</p>
-               
-              <div class="stat">
-               <div class="row justify-content-center text-center">
-                  
-                   <div class="col-md-3">
-                       <h2>140+</h2>
-                       <p>Hospitalss</p>
-                     </div> 
-                     
-                      
-                   <div class="col-md-3">
-                       <h2>55+</h2>
-                       <p>Patients</p>
-                     </div> 
-                     
-                      
-                   <div class="col-md-3">
-                       <h2>69+</h2>
-                       <p>Patients</p>
-                     </div> 
-                     
-                      
-                   <div class="col-md-3">
-                       <h2>120+</h2>
-                       <p>Doctors</p>
-                     </div> 
-                   
-               </div>
-            </div>
+            
+             
             
                 <div class="doctors">
                 <h1 style="font-weight: 500">Some of our doctors</h1><br>
@@ -107,8 +33,11 @@
                        <div class="card" style="width: 20rem">
                            <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
                            <div class="card-body">
-                               <h4>Dr.Howard Wolowitz</h4>
+                               <h4>Dr.Louisa</h4>
                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                                <div class="d-flex flex-row">
+                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
+                        </div>
                            </div>
                        </div>
                      </div> 
@@ -117,8 +46,11 @@
                        <div class="card" style="width: 20rem">
                            <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
                            <div class="card-body">
-                               <h4>Dr.Howard Wolowitz</h4>
+                               <h4>Dr.Louisa</h4>
                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                                  <div class="d-flex flex-row">
+                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
+                        </div>
                            </div>
                        </div>
                      </div> 
@@ -127,8 +59,11 @@
                        <div class="card" style="width: 20rem">
                            <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
                            <div class="card-body">
-                               <h4>Dr.Howard Wolowitz</h4>
+                               <h4>Dr.Louisa</h4>
                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                                  <div class="d-flex flex-row">
+                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
+                        </div>
                            </div>
                        </div>
                      </div> 
@@ -138,6 +73,62 @@
             </div>
         </div> 
     </div>
+    
+     <div class="section-1">
+           <div class="container text-center">
+            
+             
+            
+                <div class="doctors">
+             <div class="row justify-content-center text-center">
+                  
+                   <div class="col-md-4">
+                       <div class="card" style="width: 20rem">
+                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
+                           <div class="card-body">
+                               <h4>Dr. Louisa</h4>
+                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                                  <div class="d-flex flex-row">
+                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
+                        </div>
+                           </div>
+                       </div>
+                     </div> 
+                     
+                      <div class="col-md-4">
+                       <div class="card" style="width: 20rem">
+                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
+                           <div class="card-body">
+                               <h4>Dr.Louisa</h4>
+                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                                  <div class="d-flex flex-row">
+                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
+                        </div>
+                           </div>
+                       </div>
+                     </div> 
+                     
+                      <div class="col-md-4">
+                       <div class="card" style="width: 20rem">
+                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
+                           <div class="card-body">
+                               <h4>Dr.Louisa</h4>
+                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                                  <div class="d-flex flex-row">
+                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
+                        </div>
+                           </div>
+                       </div>
+                     </div> 
+
+                   
+               </div>
+            </div>
+        </div> 
+    </div>
+    
+    
+    
     
     <div class="section-2">
     
