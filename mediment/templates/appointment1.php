@@ -50,7 +50,7 @@
                           <form action="">
 
                             <label for="dname">Doctor Name</label>
-                            <input type="text" id="dname" name="doctor-name" placeholder="Doctor's name..">
+                            <input type="text" id="dname" name="doctor-name"  disabled placeholder="Doctor's name..">
 
                             
                             
@@ -87,6 +87,12 @@
     
    </main>
     
+    
+    <script type="text/javascript">
+		function validation() {
+       var a = document.forms["form"]["dname"].value;
+  		    
+
     
     <script src="https://kit.fontawesome.com/d2f5a4ed19.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

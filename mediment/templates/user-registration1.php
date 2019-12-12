@@ -47,13 +47,13 @@
                 <div class="col-md-12">
                     
                      <div class="container" style="margin-bottom: 30px">
-                          <form action="">
+                          <form name="myform" action="/action_page.php" onsubmit="validation()" method="post">
 
                             <label for="fname">First Name</label>
-                            <input type="text" id="fname" name="first-name" placeholder="Your first name..">
+                            <input type="text" id="fname" name="first-name" required placeholder="Your first name..">
 
                             <label for="lname">Last Name</label>
-                            <input type="text" id="lname" name="last-name" placeholder="Your last name..">
+                            <input type="text" id="lname" name="last-name" required placeholder="Your last name..">
                             
                             <label for="uname">User Name</label>
                             <input type="text" id="uname" name="user-name" placeholder="Your user name..">
@@ -62,7 +62,7 @@
                             <input type="text" id="phone" name="phone-number" placeholder="Your phone number..">
                             
                             <label for="age">Age</label>
-                            <input type="text" id="age" name="age" placeholder="Your age..">
+                            <input type="number" id="age" name="age" placeholder="Your age..">
 
                     
 
@@ -89,10 +89,11 @@
                             <label for="repassword">Repeat password</label>
                             
                             <input type="password" id="repassword" name="repassword" placeholder="Your repeat password is..">
-                            
+                            <label for="Comment">Comments</label>
+                              <textarea id="comment"  name="Comment" placeholder="you may include your problem and whether it is important or not..">  </textarea>
+ 
 
-
-                            <input type="submit" value="Register">
+                            <input type="submit" value="Register" onclick="validation()">
                             
 
                           </form>
@@ -116,6 +117,118 @@
     
    </main>
     
+    <script type="text/javascript">
+		function validateForm() {
+
+    var fn = document.forms["myform"]["first-name"];
+    var ln = document.forms["myform"]["last-name"];
+    var un = document.forms["myform"]["user-name"];        
+    var mail = document.forms["myform"]["email"];    
+    var ph = document.forms["myform"]["phone"];  
+    var g =  document.forms["myform"]["age"];  
+    var job = document.forms["myform"]["occupation"];  
+    var pass = document.forms["myform"]["password"];
+            var p = pass.length;
+    var repass = document.forms["myform"]["repassword"];
+            var rp = repass.length;
+             if (fn.value == "")                                  
+    { 
+        window.alert("Please enter your first name."); 
+        fn.focus(); 
+        return false; 
+    }      
+            
+             if (ln.value == "")                                  
+    { 
+        window.alert("Please enter your last name."); 
+        ln.focus(); 
+        return false; 
+    }  
+             if (un.value == "")                                  
+    { 
+        window.alert("Please enter your user name and cannot contain whitespace."); 
+        un.focus(); 
+        return false; 
+    }      
+            function userid_validation(un,mx,my)
+   {
+         var uid_len = un.value.length;
+        if (uid_len == 0 || uid_len >= 8 || uid_len < 5)
+   {  
+        alert("User Id should not be empty / length be between "+5+" to "+8);
+         un.focus();
+         return false;
+   }
+         return true;
+   }
+            
+             if (mail.value == "")                                  
+    { 
+        window.alert("Please enter a valid email."); 
+        mail.focus(); 
+        return false; 
+    } 
+            function ValidateEmail(inputText)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(inputText.value.match(mailformat))
+{
+document.myform.mail.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.myform.mail.focus();
+return false;
+}
+}
+            
+            if (ph.value == "")                           
+    { 
+        window.alert("Please enter your telephone number."); 
+        ph.focus(); 
+        return false; 
+    } 
+            function phonenumber(phone)
+{
+  var phoneno = /^\d{10}$/;
+  if(phone.value.match(phoneno))
+        {
+      return true;
+        }
+      else
+        {
+        alert("message");
+        return false;
+        }
+}
+            
+             if (pass.value == "")                        
+    { 
+        window.alert("Please enter your password"); 
+        pass.focus(); 
+        return false; 
+    } 
+            if(pass<8 || pass>32)
+    {
+    		alert("password length is between 8 and 32");
+    		return false;
+    }
+             if (repass.value == "")                        
+    { 
+        window.alert("Please enter your password"); 
+        repass.focus(); 
+        return false; 
+    } 
+            
+             if (pass != repass) 
+    {
+                alert("You first Passwords is not similar with 2nd password. Please enter same password in both");
+                return false;
+     }
+            
+            
     
     <script src="https://kit.fontawesome.com/d2f5a4ed19.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
