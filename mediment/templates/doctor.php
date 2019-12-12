@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/doctor.css">
     <link rel="stylesheet" href="css/circle.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 </head>
@@ -16,7 +16,7 @@
       <?php
         include('common/navbar.php');
         ?>
-</header>
+    </header>
    
    <main>
      
@@ -26,15 +26,15 @@
              
             
                 <div class="doctors">
-                <h1 style="font-weight: 500">Some of our doctors</h1><br>
+                <h1 style="font-weight: 500">Some of the doctors</h1><br>
              <div class="row justify-content-center text-center">
                   
                    <div class="col-md-4">
                        <div class="card" style="width: 20rem">
                            <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
                            <div class="card-body">
-                               <h4>Dr.Louisa</h4>
-                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                               <h4>Dr.Mahmudul Haque</h4>
+                               <p>Doctor Mahmudul  Haque is a senior physician of Opthalmology in Square Hospital.</p>
                                 <div class="d-flex flex-row">
                             <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
                         </div>
@@ -46,8 +46,8 @@
                        <div class="card" style="width: 20rem">
                            <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
                            <div class="card-body">
-                               <h4>Dr.Louisa</h4>
-                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                               <h4>Dr.ShahabUddin Talukdar</h4>
+                               <p>Dr. ShahabUddin Talukdar is a senior cardiologist in Apollo Hospitals.</p>
                                   <div class="d-flex flex-row">
                             <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
                         </div>
@@ -59,8 +59,8 @@
                        <div class="card" style="width: 20rem">
                            <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
                            <div class="card-body">
-                               <h4>Dr.Louisa</h4>
-                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                               <h4>Dr.Shams Munwar</h4>
+                               <p>Dr. Shams Munwar is a senior cardiologist in Apollo Hospital. </p>
                                   <div class="d-flex flex-row">
                             <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
                         </div>
@@ -86,8 +86,8 @@
                        <div class="card" style="width: 20rem">
                            <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
                            <div class="card-body">
-                               <h4>Dr. Louisa</h4>
-                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                               <h4>Dr. Hossain </h4>
+                               <p>Dr. Hossain is a dentist in The Dentistry department of Labaid Hospital</p>
                                   <div class="d-flex flex-row">
                             <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
                         </div>
@@ -99,8 +99,8 @@
                        <div class="card" style="width: 20rem">
                            <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
                            <div class="card-body">
-                               <h4>Dr.Louisa</h4>
-                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                               <h4>Dr.Nazmun Nahar</h4>
+                               <p>Dr. Nazmun Nahar is a psychologist in Square hospital</p>
                                   <div class="d-flex flex-row">
                             <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
                         </div>
@@ -112,8 +112,8 @@
                        <div class="card" style="width: 20rem">
                            <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
                            <div class="card-body">
-                               <h4>Dr.Louisa</h4>
-                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                               <h4>Prof. Dr. Atiya Sharmin</h4>
+                               <p>Prof. Dr. Atiya Sharmin is a senior consultant of gastroenterology in United Hospital.</p>
                                   <div class="d-flex flex-row">
                             <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
                         </div>
