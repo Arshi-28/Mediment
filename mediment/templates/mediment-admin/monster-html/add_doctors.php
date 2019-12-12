@@ -58,6 +58,12 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                <?php
+                if (isset($_GET['result'])&& $_GET['result']=='success'){
+                  echo "<div class='alert alert-success'>Data has been submitted</div>";
+                }
+
+                ?>
                 <div class="card">
                             <div class="card-block">
                                 <form class="form-horizontal form-material" action="add_doctors_process.php" method="post">

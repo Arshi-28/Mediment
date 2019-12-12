@@ -34,6 +34,18 @@
                         <li>
                             <a href="view_appointments.php" class="waves-effect"><i class="fa fa-stethoscope m-r-10" aria-hidden="true"></i>View appointments</a>
                         </li>
+                        <li>
+                            <a href="add_diseases.php" class="waves-effect"><i class="fa fa-medkit m-r-10" aria-hidden="true"></i>Add Diseases</a>
+                        </li>
+                        <li>
+                            <a href="view_diseases.php" class="waves-effect"><i class="fa fa-medkit m-r-10" aria-hidden="true"></i>View Diseases</a>
+                        </li>
+                        <li>
+                            <a href="add_symptoms.php" class="waves-effect"><i class="fa fa-medkit m-r-10" aria-hidden="true"></i>Add Symptoms</a>
+                        </li>
+                        <li>
+                            <a href="view_symptoms.php" class="waves-effect"><i class="fa fa-medkit m-r-10" aria-hidden="true"></i>View Symptoms</a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
