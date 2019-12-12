@@ -82,15 +82,15 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>Salman</td>
+                                                <td>Zaman</td>
+                                                <td>salmanz</td>
+                                                <td>salmanzaman@gmail.com</td>
+                                                <td>01912345678</td>
+                                                <td>30</td>
+                                                <td>Student</td>
+                                                <td>12</td>
+                                                <td>Male</td>
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
                                         </tbody>

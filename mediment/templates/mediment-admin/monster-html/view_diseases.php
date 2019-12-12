@@ -79,9 +79,9 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
+                                                <td>Pneumonia</td>
+                                                <td>Fever with cold and slight chest pains</td>
+                                                <td>Medicine</td>
                                                 <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>

@@ -77,10 +77,10 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>11</td>
+                                                <td>salmanz</td>
+                                                <td>Salman</td>
+                                                <td>Zaman</td>
+                                                <td>30</td>
                                                 <td><a href="registration.php"><i class="fa fa-check-square m-r-10" aria-hidden="true"></i></a></td>
                                             </tr>
                                         </tbody>

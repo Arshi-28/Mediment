@@ -70,7 +70,7 @@
                                             <tr>
                                                 <th>Appointment ID</th>
                                                 <th>Doctor ID</th>
-                                                <th>User ID</th>
+                                                <th>Username</th>
                                                 <th>Date</th>
                                                 <th>Time</th>
                                                 <th>Edit</th>
@@ -80,10 +80,10 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td></td>
+                                                <td>1</td>
+                                                <td>salmanz</td>
+                                                <td>2019-12-31</td>
+                                                <td>09:00 AM</td>
                                                 <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
