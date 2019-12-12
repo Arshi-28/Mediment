@@ -25,11 +25,11 @@
           </ul>
     
         <form action="" class="form-inline my-2 my-lg-0">
-            <button class="btn menu-right-btn border" type="submit">
+            <button class="btn menu-right-btn border" type="submit" href="../user-registration1.html">
                 Register                
             </button>
-             <button class="btn menu-left-btn border" type="submit">
-                Appointment               
+             <button class="btn menu-left-btn border" type="submit" href="../login1.html">
+                Login               
             </button>
         </form>
      </div>
