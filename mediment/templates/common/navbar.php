@@ -23,11 +23,11 @@
           </ul>
     
         <form action="" class="form-inline my-2 my-lg-0">
-            <button class="btn menu-right-btn border" type="submit" href="../user-registration1.php">
-                Register                
+            <button class="btn menu-right-btn border" type="submit" >
+                <a href="user-registration1.php">Register</a>                
             </button>
-             <button class="btn menu-left-btn border" type="submit" href="../login1.php">
-                Login               
+             <button class="btn menu-left-btn border" type="submit" >
+                <a href="login1.php">Login</a>               
             </button>
         </form>
      </div>
