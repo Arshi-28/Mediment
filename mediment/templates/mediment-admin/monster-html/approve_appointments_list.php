@@ -79,10 +79,10 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>11</td>
-                                                <td></td>
+                                                <td>salman</td>
+                                                <td>1</td>
+                                                <td>2019-12-12</td>
+                                                <td>08:00 AM</td>
                                                 <td><a href="approve_appointments.php"><i class="fa fa-check-square m-r-10" aria-hidden="true"></i></a></td>
                                             </tr>
                                         </tbody>

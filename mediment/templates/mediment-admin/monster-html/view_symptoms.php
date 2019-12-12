@@ -78,8 +78,8 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
+                                                <td>Fever</td>
+                                                <td>Elevated body temperature.</td>
                                                 <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
