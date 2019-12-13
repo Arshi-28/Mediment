@@ -5,7 +5,6 @@
     
     $result=mysqli_query($connect,$sql);
     $num_of_rows = mysqli_num_rows($result);
-    $result=mysqli_query($connect,$sql);
 ?>
 
 <body class="fix-header card-no-border">
@@ -90,7 +89,7 @@
                                         <tbody>
                                             <?php
                                             while($row=mysqli_fetch_assoc($result)){
-                                              ?>
+                                            ?>
                                             <tr>
                                                 <td><?php echo $row['doctorid']; ?></td>
                                                 <td><?php echo ucwords(strtolower($row['firstname'])); ?></td>
@@ -111,7 +110,7 @@
                             <?php 
                               }
                               else if($num_of_rows == 0){
-                               ?>
+                            ?>
                                <div class='alert alert-danger'>
                                 No data found.
                                </div>

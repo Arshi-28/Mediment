@@ -64,9 +64,8 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <?php
-
-                                  if($num_of_rows > 0){
-                                  ?>
+                if($num_of_rows > 0){
+                ?>
                 <div class="row">
                     <!-- column -->
                     <div class="col-sm-12">

@@ -58,13 +58,19 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                <?php
+                if (isset($_GET['result'])&& $_GET['result']=='success'){
+                  echo "<div class='alert alert-success'>Data has been submitted</div>";
+                }
+
+                ?>
                 <div class="card">
                             <div class="card-block">
-                                <form class="form-horizontal form-material" action="add_doctors_process.php" method="post">
+                                <form class="form-horizontal form-material" action="add_symptoms_process.php" method="post">
                                     <div class="form-group">
                                         <label for="name" class="col-md-12">Name</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="name" name="diseasename">
+                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="name" name="sympname">
                                         </div>
                                     </div>
                                     <div class="form-group">

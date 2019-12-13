@@ -1,5 +1,10 @@
 <?php
     include('common/html_head.php');
+    include('common/db_connection.php');
+    $sql="SELECT * FROM diseases WHERE isdelete='0' ORDER BY diseaseid";
+    
+    $result=mysqli_query($connect,$sql);
+    $num_of_rows = mysqli_num_rows($result);
 ?>
 
 <body class="fix-header card-no-border">
@@ -58,6 +63,9 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                <?php
+                if($num_of_rows > 0){
+                ?>
                 <div class="row">
                     <!-- column -->
                     <div class="col-sm-12">
@@ -77,18 +85,34 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            while($row=mysqli_fetch_assoc($result)){
+                                            ?>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Pneumonia</td>
-                                                <td>Fever with cold and slight chest pains</td>
-                                                <td>Medicine</td>
+                                                <td><?php echo $row['diseaseid']; ?></td>
+                                                <td><?php echo ucwords(strtolower($row['name'])); ?></td>
+                                                <td><?php echo $row['detail']; ?></td>
+                                                <td><?php echo $row['specialization']; ?></td>
                                                 <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+                            <?php 
+                              }
+                              else if($num_of_rows == 0){
+                            ?>
+                               <div class='alert alert-danger'>
+                                No data found.
+                               </div>
+                               <?php
+                                }
+                               ?>
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,11 @@ $hosp=$_POST['hospital'];
 
 $sql="INSERT INTO doctors(firstname,lastname,specialization,education,hospitalid) VALUES('$firstname','$lastname','$spec','$ed','$hosp')";
 
-mysqli_query($connect,$sql);
+$check=mysqli_query($connect,$sql);
 
-header("Location:add_doctors.php?result=success");
+if($check){
+    header("Location:add_doctors.php?result=success");
+}else{
+    header("Location:add_doctors.php?result=fail");
+}
 ?>
