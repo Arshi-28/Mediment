@@ -64,15 +64,14 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                <?php
+                if($num_of_rows > 0){
+                ?>
                 <div class="row">
                     <!-- column -->
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-block">
-                                <?php
-
-                                  if($num_of_rows > 0){
-                                  ?>
                                 <h4 class="card-title">List of Doctors</h4>
                                 <div class="table-responsive">
                                     <table class="table">

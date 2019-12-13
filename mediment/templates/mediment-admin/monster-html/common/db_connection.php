@@ -1,4 +1,4 @@
 <?php
-$connect=mysqli_connect("localhost","root","","appointment_system");
+$connect=mysqli_connect("localhost","root","roksana.","appointment_system");
 
 ?>
