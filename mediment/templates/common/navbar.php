@@ -16,6 +16,9 @@
                    <a class="nav-link" href="doctor.php">Doctors</a>
               </li>
               <li class="nav-item">
+                   <a class="nav-link" href="appointment1.php">Create Appointment</a>
+              </li>
+              <li class="nav-item">
                    <a class="nav-link" href="contact.php">Contact</a>
               </li>
               
