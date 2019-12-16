@@ -26,18 +26,18 @@ CREATE TABLE `appointments` (
   `appointmentid` int(11) NOT NULL AUTO_INCREMENT,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
-  `username` varchar(100) NOT NULL,
-  `doctors` int(11) NOT NULL,
+  `doctorid` int(11) NOT NULL,
   `isdelete` char(1) DEFAULT '0',
   `verified` char(1) DEFAULT '0',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `userid` int(11) NOT NULL,
   PRIMARY KEY (`appointmentid`),
   UNIQUE KEY `appointmentid_UNIQUE` (`appointmentid`),
-  KEY `fk_appointments_users1_idx` (`username`),
-  KEY `fk_appointments_doctors1_idx` (`doctors`),
-  CONSTRAINT `fk_appointments_doctors1` FOREIGN KEY (`doctors`) REFERENCES `doctors` (`doctorid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_appointments_users1` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_appointments_doctors1_idx` (`doctorid`),
+  KEY `fk_appointments_user1_idx` (`userid`),
+  CONSTRAINT `fk_appointments_doctors1` FOREIGN KEY (`doctorid`) REFERENCES `doctors` (`doctorid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_appointments_user1` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -116,16 +116,18 @@ CREATE TABLE `doctors` (
   `doctorid` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(45) NOT NULL,
   `lastname` varchar(45) DEFAULT NULL,
-  `specialization` varchar(45) NOT NULL,
   `education` varchar(255) DEFAULT NULL,
   `hospitalid` int(11) NOT NULL,
   `isdelete` char(1) DEFAULT '0',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `specializationid` int(11) NOT NULL,
   PRIMARY KEY (`doctorid`),
   UNIQUE KEY `doctorid_UNIQUE` (`doctorid`),
   KEY `fk_doctors_hospitals1_idx` (`hospitalid`),
-  CONSTRAINT `fk_doctors_hospitals1` FOREIGN KEY (`hospitalid`) REFERENCES `hospitals` (`hospitalid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_doctors_specialization1_idx` (`specializationid`),
+  CONSTRAINT `fk_doctors_hospitals1` FOREIGN KEY (`hospitalid`) REFERENCES `hospitals` (`hospitalid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_doctors_specialization1` FOREIGN KEY (`specializationid`) REFERENCES `specialization` (`specid`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -155,7 +157,7 @@ CREATE TABLE `hospitals` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`hospitalid`),
   UNIQUE KEY `hospitalid_UNIQUE` (`hospitalid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -164,7 +166,7 @@ CREATE TABLE `hospitals` (
 
 LOCK TABLES `hospitals` WRITE;
 /*!40000 ALTER TABLE `hospitals` DISABLE KEYS */;
-INSERT INTO `hospitals` VALUES (1,'Apollo Hospital','02-55037242','Plot: 81 Block: E, Dhaka 1229','0','2019-12-14 00:10:19','2019-12-14 00:10:19');
+INSERT INTO `hospitals` VALUES (1,'','02-55037242','Plot: 81 Block: E, Dhaka 1229','0','2019-12-16 13:27:22','2019-12-16 13:27:22'),(2,'Apollo Hospital','02-55037242','Plot: 81 Block: E, Dhaka 1229','0','2019-12-16 13:28:09','2019-12-16 13:28:09');
 /*!40000 ALTER TABLE `hospitals` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,18 +180,18 @@ DROP TABLE IF EXISTS `reviews`;
 CREATE TABLE `reviews` (
   `reviewid` int(11) NOT NULL AUTO_INCREMENT,
   `message` varchar(50) NOT NULL,
-  `username` varchar(100) NOT NULL,
   `doctorid` int(11) NOT NULL,
   `isdelete` char(1) DEFAULT '0',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `rating` int(10) unsigned DEFAULT NULL,
+  `user_userid` int(11) NOT NULL,
   PRIMARY KEY (`reviewid`),
   UNIQUE KEY `reviewid_UNIQUE` (`reviewid`),
-  KEY `fk_reviews_users1_idx` (`username`),
   KEY `fk_reviews_doctors1_idx` (`doctorid`),
+  KEY `fk_reviews_user1_idx` (`user_userid`),
   CONSTRAINT `fk_reviews_doctors1` FOREIGN KEY (`doctorid`) REFERENCES `doctors` (`doctorid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_reviews_users1` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_reviews_user1` FOREIGN KEY (`user_userid`) REFERENCES `user` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -200,6 +202,30 @@ CREATE TABLE `reviews` (
 LOCK TABLES `reviews` WRITE;
 /*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
 /*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `specialization`
+--
+
+DROP TABLE IF EXISTS `specialization`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `specialization` (
+  `specid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`specid`),
+  UNIQUE KEY `specid_UNIQUE` (`specid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `specialization`
+--
+
+LOCK TABLES `specialization` WRITE;
+/*!40000 ALTER TABLE `specialization` DISABLE KEYS */;
+/*!40000 ALTER TABLE `specialization` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -231,6 +257,34 @@ LOCK TABLES `symptoms` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `userid` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `usersid` int(11) NOT NULL,
+  PRIMARY KEY (`userid`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  KEY `fk_user_users1_idx` (`usersid`),
+  CONSTRAINT `fk_user_users1` FOREIGN KEY (`usersid`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -238,12 +292,10 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `username` varchar(100) NOT NULL,
-  `first name` varchar(45) NOT NULL,
-  `last name` varchar(45) DEFAULT NULL,
-  `email` varchar(45) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `contact num` varchar(11) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(45) NOT NULL,
+  `lastname` varchar(45) DEFAULT NULL,
+  `contact` varchar(11) DEFAULT NULL,
   `age` int(10) unsigned DEFAULT NULL,
   `occupation` varchar(45) DEFAULT NULL,
   `weight` varchar(45) DEFAULT NULL,
@@ -252,9 +304,8 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `isdelete` char(1) NOT NULL DEFAULT '0',
   `verified` char(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`username`),
-  UNIQUE KEY `userid_UNIQUE` (`username`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `userid_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -276,4 +327,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-14  0:22:50
+-- Dump completed on 2019-12-16 13:29:05

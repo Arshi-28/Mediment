@@ -47,7 +47,7 @@
                 <div class="col-md-12">
                     
                      <div class="container" style="margin-bottom: 30px">
-                          <form name="myform" action="/action_page.php" onsubmit="validation()" method="post">
+                          <form name="myform" action="insert_users.php" onsubmit="validation()" method="post">
 
                             <label for="fname">First Name</label>
                             <input type="text" id="fname" name="first-name" required placeholder="Your first name..">
@@ -89,9 +89,9 @@
                             <label for="repassword">Repeat password</label>
                             
                             <input type="password" id="repassword" name="repassword" placeholder="Your repeat password is..">
-                            <label for="Comment">Comments</label>
-                              <textarea id="comment"  name="Comment" placeholder="you may include your problem and whether it is important or not..">  </textarea>
- 
+                            
+                            <label for="phone">Weight</label>
+                            <input type="number" id="phone" name="weight" placeholder="Your weight..">
 
                             <input type="submit" value="Register" onclick="validation()">
                             

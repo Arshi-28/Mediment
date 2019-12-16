@@ -5,7 +5,7 @@ $name=$_POST['name'];
 $contact=$_POST['contact'];
 $add=$_POST['address'];
 
-$sql="INSERT INTO hospitals(name,contact num,address) VALUES('$name','$contact','$add')";
+$sql="INSERT INTO hospitals(name,contact,address) VALUES('$name','$contact','$add')";
 
 $check=mysqli_query($connect,$sql);
 if($check){

@@ -35,6 +35,9 @@
                             <a href="view_appointments.php" class="waves-effect"><i class="fa fa-stethoscope m-r-10" aria-hidden="true"></i>View appointments</a>
                         </li>
                         <li>
+                            <a href="add_spec.php" class="waves-effect"><i class="fa fa-medkit m-r-10" aria-hidden="true"></i>Add Specializations</a>
+                        </li>
+                        <li>
                             <a href="add_diseases.php" class="waves-effect"><i class="fa fa-medkit m-r-10" aria-hidden="true"></i>Add Diseases</a>
                         </li>
                         <li>
