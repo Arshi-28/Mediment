@@ -59,10 +59,13 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <?php
-                if (isset($_GET['result'])&& $_GET['result']=='success'){
-                  echo "<div class='alert alert-success'>Data has been submitted</div>";
+                if(isset($_GET['result'])){
+                    if($_GET['result']=='success'){
+                        echo "<div class='alert alert-success'>Data has been submitted</div>";
+                    }else if($_GET['result']=='fail'){
+                        echo "<div class='alert alert-danger'>Data has not been submitted</div>";
+                    }
                 }
-
                 ?>
                 <div class="card">
                             <div class="card-block">
