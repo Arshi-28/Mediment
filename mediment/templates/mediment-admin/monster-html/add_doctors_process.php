@@ -7,7 +7,7 @@ $spec=$_POST['specialization'];
 $ed=$_POST['education'];
 $hosp=$_POST['hospital'];
 
-$sql="INSERT INTO doctors(firstname,lastname,specialization,education,hospitalid) VALUES('$firstname','$lastname','$spec','$ed','$hosp')";
+$sql="INSERT INTO doctors(firstname,lastname,specializationid,education,hospitalid) VALUES('$firstname','$lastname','$spec','$ed','$hosp')";
 
 $check=mysqli_query($connect,$sql);
 

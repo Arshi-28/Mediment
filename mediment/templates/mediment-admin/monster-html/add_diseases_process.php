@@ -5,7 +5,7 @@ $name=$_POST['diseasename'];
 $det=$_POST['detail'];
 $spec=$_POST['specialization'];
 
-$sql="INSERT INTO diseases(name,detail,specialization) VALUES('$name','$det','$spec')";
+$sql="INSERT INTO diseases(name,detail,specid) VALUES('$name','$det','$spec')";
 
 $check=mysqli_query($connect,$sql);
 

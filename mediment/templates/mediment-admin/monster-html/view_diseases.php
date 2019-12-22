@@ -92,7 +92,7 @@
                                                 <td><?php echo $row['diseaseid']; ?></td>
                                                 <td><?php echo ucwords(strtolower($row['name'])); ?></td>
                                                 <td><?php echo $row['detail']; ?></td>
-                                                <td><?php echo $row['specid']; ?></td>
+                                                <td><?php echo getSpec($row['specid']); ?></td>
                                                 <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
@@ -127,6 +127,13 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <?php
+            function getSpec($id){
+                global $connect;
+                $sql = "SELECT * FROM specialization WHERE specid=".$id;
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['name'];
+            }
             include('common/footer.php');
             ?>
 </body>

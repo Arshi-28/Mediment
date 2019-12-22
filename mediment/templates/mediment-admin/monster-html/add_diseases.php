@@ -1,5 +1,8 @@
 <?php
     include('common/html_head.php');
+    include('common/db_connection.php');
+    $sql="SELECT * FROM specialization WHERE isdelete='0' ORDER BY name";
+    $result=mysqli_query($connect,$sql);
 ?>
 
 <body class="fix-header card-no-border">
@@ -86,20 +89,9 @@
                                         <label class="col-sm-12">Select Specialization</label>
                                         <div class="col-sm-12">
                                             <select class="form-control form-control-line" name="specialization">
-                                                <option value="">Select specialization</option>
-                                                <option value="0">Dermatology</option>
-                                                <option value="1">Radiology</option>
-                                                <option value="2">Medicine</option>
-                                                <option value="3">Neurology</option>
-                                                <option value="4">Gynaecology</option>
-                                                <option value="5">Surgery</option>
-                                                <option value="6">Opthamology</option>
-                                                <option value="7">Pathology</option>
-                                                <option value="8">Pediatrics</option>
-                                                <option value="9">Cardiology</option>
-                                                <option value="10">Psychiatry</option>
-                                                <option value="11">Orthopedics</option>
-                                                <option value="12">Oncology</option>
+                                                <?php while($row=mysqli_fetch_assoc($result)):;?>
+                                                <option value="<?php echo $row['specid'];?>"><?php echo $row['name'];?></option>
+                                                <?php endwhile;?>
                                             </select>
                                         </div>
                                     </div>

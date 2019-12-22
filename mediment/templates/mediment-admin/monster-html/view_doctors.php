@@ -94,9 +94,9 @@
                                                 <td><?php echo $row['doctorid']; ?></td>
                                                 <td><?php echo ucwords(strtolower($row['firstname'])); ?></td>
                                                 <td><?php echo ucwords(strtolower($row['lastname'])); ?></td>
-                                                <td><?php echo $row['specialization']; ?></td>
+                                                <td><?php echo getSpec($row['specializationid']); ?></td>
                                                 <td><?php echo $row['education']; ?></td>
-                                                <td><?php echo $row['hospitalid']; ?></td>
+                                                <td><?php echo getHospital($row['hospitalid']); ?></td>
                                                 <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
@@ -131,6 +131,21 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <?php
+            function getHospital($id){
+                global $connect;
+                $sql = "SELECT * FROM hospitals WHERE hospitalid=".$id;
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['name'];
+            }
+            function getSpec($id){
+                global $connect;
+                $sql = "SELECT * FROM specialization WHERE specid=".$id;
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['name'];
+            }
+            
             include('common/footer.php');
             ?>
 </body>
