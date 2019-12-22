@@ -92,7 +92,7 @@
                                                 <td><?php echo $row['diseaseid']; ?></td>
                                                 <td><?php echo ucwords(strtolower($row['name'])); ?></td>
                                                 <td><?php echo $row['detail']; ?></td>
-                                                <td><?php echo $row['specialization']; ?></td>
+                                                <td><?php echo $row['specid']; ?></td>
                                                 <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>

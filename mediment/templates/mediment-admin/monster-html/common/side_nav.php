@@ -38,6 +38,9 @@
                             <a href="add_spec.php" class="waves-effect"><i class="fa fa-medkit m-r-10" aria-hidden="true"></i>Add Specializations</a>
                         </li>
                         <li>
+                            <a href="view_specs.php" class="waves-effect"><i class="fa fa-medkit m-r-10" aria-hidden="true"></i>View Specializations</a>
+                        </li>
+                        <li>
                             <a href="add_diseases.php" class="waves-effect"><i class="fa fa-medkit m-r-10" aria-hidden="true"></i>Add Diseases</a>
                         </li>
                         <li>

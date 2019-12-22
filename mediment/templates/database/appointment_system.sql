@@ -61,12 +61,14 @@ CREATE TABLE `diseases` (
   `diseaseid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `detail` varchar(200) DEFAULT NULL,
-  `specialization` varchar(45) DEFAULT NULL,
+  `specid` int(11) NOT NULL,
   `isdelete` char(1) DEFAULT '0',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`diseaseid`),
-  UNIQUE KEY `diseaseid_UNIQUE` (`diseaseid`)
+  UNIQUE KEY `diseaseid_UNIQUE` (`diseaseid`),
+  KEY `fk_diseases_specialization1_idx` (`specid`),
+  CONSTRAINT `fk_diseases_specialization1` FOREIGN KEY (`specid`) REFERENCES `specialization` (`specid`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -157,7 +159,7 @@ CREATE TABLE `hospitals` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`hospitalid`),
   UNIQUE KEY `hospitalid_UNIQUE` (`hospitalid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,7 +168,6 @@ CREATE TABLE `hospitals` (
 
 LOCK TABLES `hospitals` WRITE;
 /*!40000 ALTER TABLE `hospitals` DISABLE KEYS */;
-INSERT INTO `hospitals` VALUES (1,'','02-55037242','Plot: 81 Block: E, Dhaka 1229','0','2019-12-16 13:27:22','2019-12-16 13:27:22'),(2,'Apollo Hospital','02-55037242','Plot: 81 Block: E, Dhaka 1229','0','2019-12-16 13:28:09','2019-12-16 13:28:09');
 /*!40000 ALTER TABLE `hospitals` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,6 +215,9 @@ DROP TABLE IF EXISTS `specialization`;
 CREATE TABLE `specialization` (
   `specid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
+  `isdelete` char(1) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`specid`),
   UNIQUE KEY `specid_UNIQUE` (`specid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -327,4 +331,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-16 13:29:05
+-- Dump completed on 2019-12-23  2:39:53

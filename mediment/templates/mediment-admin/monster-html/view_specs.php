@@ -1,7 +1,7 @@
 <?php
     include('common/html_head.php');
     include('common/db_connection.php');
-    $sql="SELECT * FROM symptoms WHERE isdelete='0' ORDER BY symptomid";
+    $sql="SELECT * FROM specialization WHERE isdelete='0' ORDER BY specid";
     
     $result=mysqli_query($connect,$sql);
     $num_of_rows = mysqli_num_rows($result);
@@ -50,10 +50,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">View Symptoms</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">View Specializations</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">View Symptoms</li>
+                            <li class="breadcrumb-item active">View Specializations</li>
                         </ol>
                     </div>
                 </div>
@@ -71,14 +71,13 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">List of Symptoms</h4>
+                                <h4 class="card-title">List of Specializations</h4>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Symptom ID</th>
+                                                <th>Specialization ID</th>
                                                 <th>Name</th>
-                                                <th>Detail</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -88,9 +87,8 @@
                                             while($row=mysqli_fetch_assoc($result)){
                                               ?>
                                             <tr>
-                                                <td><?php echo $row['symptomid'];?></td>
+                                                <td><?php echo $row['specid']; ?></td>
                                                 <td><?php echo ucwords(strtolower($row['name'])); ?></td>
-                                                <td><?php echo $row['details'];?></td>
                                                 <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
