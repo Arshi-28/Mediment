@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V19</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -38,13 +38,13 @@
     if(isset($_GET['result']) && $_GET['result']=='err'){
     ?>
     <div class="alert alert-danger">
-      Invalid username or password.
+      Invalid username and/or password.
     </div>
     <?php
       }else if(isset($_GET['result']) && $_GET['result']=='unauthorized'){
         ?>
         <div class="alert alert-danger">
-          Unauthorized Access.
+          Access unauthorised.
         </div>
         <?php
       }
