@@ -77,7 +77,7 @@
                 
                 <div class="card">
                             <div class="card-block">
-                                <form class="form-horizontal form-material" action="update_hospitals_process.php" method="post">
+                                <form class="form-horizontal form-material" action="update_hospitals_process.php?id=<? php echo $id ?>" method="post">
                                     <div class="form-group">
                                         <label for="fname" class="col-md-12">Hospital Name</label>
                                         <div class="col-md-12">

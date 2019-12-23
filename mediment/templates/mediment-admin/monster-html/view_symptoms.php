@@ -92,7 +92,8 @@
                                                 <td><?php echo ucwords(strtolower($row['name'])); ?></td>
                                                 <td><?php echo $row['details'];?></td>
                                                 <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
-                                                <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
+                                                <td><a href="update_symptoms.php?id=<?php echo $row['hospitalid']; ?>" class="btn btn-default"><i class="fa fa-edit"></i></a></td>
+                                               <td><a href="delete_symptoms.php?id=<?php echo $row['hospitalid'];?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
                                             <?php
                                             }
