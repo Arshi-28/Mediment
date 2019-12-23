@@ -7,7 +7,6 @@
     $sql2="SELECT * FROM diseases WHERE isdelete='0' AND diseaseid=".$id;
     $result2=mysqli_query($connect,$sql2);
     $row2=mysqli_fetch_assoc($result2);
-    
 ?>
 
 <body class="fix-header card-no-border">

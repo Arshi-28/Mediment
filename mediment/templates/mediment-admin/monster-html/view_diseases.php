@@ -94,7 +94,7 @@
                                                 <td><?php echo $row['detail']; ?></td>
                                                 <td><?php echo getSpec($row['specid']); ?></td>
                                                 <td><a href="update_diseases.php?id=<?php echo $row['diseaseid']; ?>" class="btn btn-default"><i class="fa fa-edit"></i></a></td>
-                                                <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
+                                                <td><a href="delete_diseases.php?id=<?php echo $row['diseaseid'];?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
                                             <?php
                                             }

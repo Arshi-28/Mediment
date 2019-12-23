@@ -8,9 +8,6 @@
                             <a href="index.php" class="waves-effect"><i class="fa  fa-calendar m-r-10" aria-hidden="true"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="pages-profile.php" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Profile</a>
-                        </li>
-                        <li>
                             <a href="approve_registrations.php" class="waves-effect"><i class="fa fa-check-square-o m-r-10" aria-hidden="true"></i>Approve Registrations</a>
                         </li>
                         <li>
