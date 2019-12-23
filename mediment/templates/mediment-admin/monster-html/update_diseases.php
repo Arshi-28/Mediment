@@ -1,10 +1,13 @@
 <?php
     include('common/html_head.php');
     include('common/db_connection.php');
-    $sql="SELECT * FROM diseases WHERE isdelete='0' ORDER BY diseaseid";
-    
+    $sql="SELECT * FROM specialization WHERE isdelete='0' ORDER BY name";
     $result=mysqli_query($connect,$sql);
-    $num_of_rows = mysqli_num_rows($result);
+    $id =$_GET['id'];
+    $sql2="SELECT * FROM diseases WHERE isdelete='0' AND diseaseid=".$id;
+    $result2=mysqli_query($connect,$sql2);
+    $row2=mysqli_fetch_assoc($result2);
+    
 ?>
 
 <body class="fix-header card-no-border">
@@ -50,10 +53,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">View Diseases</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Add Diseases</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">View Diseases</li>
+                            <li class="breadcrumb-item active">Add Diseases</li>
                         </ol>
                     </div>
                 </div>
@@ -63,59 +66,39 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <?php
-                if($num_of_rows > 0){
-                ?>
-                <div class="row">
-                    <!-- column -->
-                    <div class="col-sm-12">
-                        <div class="card">
+                <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">List of Diseases</h4>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Disease ID</th>
-                                                <th>Name</th>
-                                                <th>Detail</th>
-                                                <th>Specialization</th>
-                                                <th>Edit</th>
-                                                <th>Delete</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            while($row=mysqli_fetch_assoc($result)){
-                                            ?>
-                                            <tr>
-                                                <td><?php echo $row['diseaseid']; ?></td>
-                                                <td><?php echo ucwords(strtolower($row['name'])); ?></td>
-                                                <td><?php echo $row['detail']; ?></td>
-                                                <td><?php echo getSpec($row['specid']); ?></td>
-                                                <td><a href="update_diseases.php?id=<?php echo $row['diseaseid']; ?>" class="btn btn-default"><i class="fa fa-edit"></i></a></td>
-                                                <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
-                                            </tr>
-                                            <?php
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <form class="form-horizontal form-material" action="update_diseases_process.php?id=<?php echo $id ?>" method="post">
+                                    <div class="form-group">
+                                        <label for="name" class="col-md-12">Name</label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="name" name="diseasename" value="<?php echo $row2['name'];?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="det" class="col-md-12">Detail</label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="det" name="detail" value="<?php echo $row2['detail'];?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Select Specialization</label>
+                                        <div class="col-sm-12">
+                                            <select class="form-control form-control-line" name="specialization" id="listBoxId">
+                                                <?php while($row=mysqli_fetch_assoc($result)):;?>
+                                                <option value="<?php echo $row['specid'];?>"><?php echo $row['name'];?></option>
+                                                <?php endwhile;?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input type="submit" class="btn btn-success" value="Add Disease">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                            <?php 
-                              }
-                              else if($num_of_rows == 0){
-                            ?>
-                               <div class='alert alert-danger'>
-                                No data found.
-                               </div>
-                               <?php
-                                }
-                               ?>
                         </div>
-                    </div>
-                </div>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -126,14 +109,8 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
+            
             <?php
-            function getSpec($id){
-                global $connect;
-                $sql = "SELECT * FROM specialization WHERE specid=".$id;
-                $result=mysqli_query($connect,$sql);
-                $row=mysqli_fetch_assoc($result);
-                return $row['name'];
-            }
             include('common/footer.php');
             ?>
 </body>
