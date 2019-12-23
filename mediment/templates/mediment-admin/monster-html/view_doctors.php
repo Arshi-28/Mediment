@@ -98,7 +98,7 @@
                                                 <td><?php echo $row['education']; ?></td>
                                                 <td><?php echo getHospital($row['hospitalid']); ?></td>
                                                 <td><a href="update_doctors.php?id=<?php echo $row['doctorid']; ?>" class="btn btn-default"><i class="fa fa-edit"></i></a></td>
-                                                <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
+                                                <td><a href="delete_doctors.php?id=<?php echo $row['doctorid'];?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
                                             <?php
                                             }
