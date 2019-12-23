@@ -1,3 +1,9 @@
+<?php
+ session_start();
+ if(!isset($_SESSION['fullname'])){
+  header('Location: copies/Login/index.php?result=unauthorized');
+ }
+ ?>
         <header class="topbar">
             <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
                 <!-- ============================================================== -->
