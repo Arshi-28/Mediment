@@ -72,7 +72,7 @@
                                         <label for="name" class="col-md-12">Name</label>
                                         <div class="col-md-12">
                                             <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="name" name="diseasename" value="<?php echo $row2['name'];?>">
-                                        </div>
+                                        </div>`
                                     </div>
                                     <div class="form-group">
                                         <label for="det" class="col-md-12">Detail</label>
