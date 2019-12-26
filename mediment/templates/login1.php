@@ -16,6 +16,17 @@
     <header>
 <?php
         include('common/navbar.php');
+        
+    require_once "config.php";
+
+	if (isset($_SESSION['access_token'])) {
+		header('Location: appointment1.php');
+		exit();
+	}
+
+	$loginURL = $gClient->createAuthUrl();
+
+        
         ?>
 </header>
    
@@ -62,7 +73,7 @@
 
 
                             <input type="submit" value="Login">
-                            <input type="submit" value="Login with Facebook">
+                        <input type="button" onclick="window.location = '<?php echo $loginURL ?>';" value="Log In With Google" class="btn btn-danger">
                             </fieldset>
                             </form>
             </div>
