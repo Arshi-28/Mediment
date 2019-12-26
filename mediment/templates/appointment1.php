@@ -12,17 +12,14 @@
 
 </head>
 <body>
-    <?php
- session_start();
- if(!isset($_SESSION['fullname'])){
-  header('Location: login1.php?result=unauthorized');
- }
- ?>
     
      
 <header>
 <?php
         include('common/navbar.php');
+    if(!isset($_SESSION['fullname'])){
+  header('Location: login1.php?result=unauthorized');
+ }
         ?>
 </header>
    
