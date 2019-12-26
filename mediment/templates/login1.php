@@ -16,7 +16,6 @@
     <header>
 <?php
         include('common/navbar.php');
-        
 
         
         ?>
@@ -37,6 +36,21 @@
                </div>
            </div>
        </div>
+       <?php
+    if(isset($_GET['result']) && $_GET['result']=='err'){
+    ?>
+    <div class="alert alert-danger">
+      Invalid username and/or password.
+    </div>
+    <?php
+      }else if(isset($_GET['result']) && $_GET['result']=='unauthorized'){
+        ?>
+        <div class="alert alert-danger">
+          Access unauthorised.
+        </div>
+        <?php
+      }
+    ?>
        
       
     
@@ -50,7 +64,7 @@
                 <div class="col-md-12">
                     
                      <div class="container" style="margin-bottom: 30px">
-                          <form action="">
+                          <form action="login_process.php" method="post">
                             <fieldset>
                             <label for="uname">User Name</label>
                             <input type="text" id="uname" name="user-name" placeholder="Your user name..">
