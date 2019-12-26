@@ -1,7 +1,7 @@
 <?php
  session_start();
  if(!isset($_SESSION['fullname'])){
-  header('Location: copies/Login/index.php?result=unauthorized');
+  header('Location: ../../login1.php?result=unauthorized');
  }
  ?>
         <header class="topbar">

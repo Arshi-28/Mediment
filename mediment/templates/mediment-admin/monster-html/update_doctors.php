@@ -54,10 +54,11 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Add Doctors</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Edit Doctor Information</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Add Doctors</li>
+                            <li class="breadcrumb-item active">View Doctors</li>
+                            <li class="breadcrumb-item active">Edit Doctor</li>
                         </ol>
                     </div>
                 </div>
@@ -67,18 +68,10 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <?php
-                if(isset($_GET['result'])){
-                    if($_GET['result']=='success'){
-                        echo "<div class='alert alert-success'>Data has been submitted</div>";
-                    }else if($_GET['result']=='fail'){
-                        echo "<div class='alert alert-danger'>Data has not been submitted</div>";
-                    }
-                }
-                ?>
+
                 <div class="card">
                             <div class="card-block">
-                                <form class="form-horizontal form-material" action="update_doctors_process.php?id=<? php echo $id ?>" method="post">
+                                <form class="form-horizontal form-material" action="update_doctors_process.php?id=<?php echo $id; ?>" method="post">
                                     <div class="form-group">
                                         <label for="fname" class="col-md-12">First Name</label>
                                         <div class="col-md-12">
@@ -119,7 +112,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <input type="submit" class="btn btn-success" value="Add Doctor">
+                                            <input type="submit" class="btn btn-success" value="Update">
                                         </div>
                                     </div>
                                 </form>
