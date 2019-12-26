@@ -10,6 +10,7 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
 </head>
 	
@@ -33,39 +34,9 @@
 <body>
 
   <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Medico</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse"></div>
-       <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                   <a class="nav-link" href="#">Doctors</a>
-              </li>
-              <li class="nav-item">
-                   <a class="nav-link" href="#">Contact</a>
-              </li>
-              
-          </ul>
-    
-        <form action="" class="form-inline my-2 my-lg-0">
-            <button class="btn menu-right-btn border" type="submit">
-                Register                
-            </button>
-             <button class="btn menu-left-btn border" type="submit">
-                Login               
-            </button>
-        </form>
-     </div>
-    </nav>
+      <?php
+        include('common/navbar.php');
+        ?>
 </header>
 
   <div class="container">
