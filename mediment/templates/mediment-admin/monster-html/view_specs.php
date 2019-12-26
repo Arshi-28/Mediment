@@ -90,7 +90,8 @@
                                                 <td><?php echo $row['specid']; ?></td>
                                                 <td><?php echo ucwords(strtolower($row['name'])); ?></td>
                                                 <td><a class="btn btn-default"><i class="fa fa-edit"></i></a></td>
-                                                <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
+                                                <td><a href="update_specs.php?id=<?php echo $row['specid']; ?>" class="btn btn-default"><i class="fa fa-edit"></i></a></td>
+                                               <td><a href="delete_specs.php?id=<?php echo $row['specid'];?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
                                             <?php
                                             }
