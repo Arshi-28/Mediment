@@ -3,17 +3,15 @@
 include ('common/db_connection.php');
 $fname=$_POST['first-name'];
 $lname=$_POST['last-name'];
-$username= $_POST['user-name'];
 $phone = $_POST['phone-number'];
 $age=$_POST['age'];
 $occu=$_POST['occupation'];
 $gender=$_POST['gender'];
 $mail = $_POST['user-email'];
 $pass = md5($_POST['password']);
-$repass = md5($_POST['repassword']);
 $weight = $_POST['weight'];
 
-$sql="INSERT INTO users(username,firstname,lastname,email,password,contact,age,occupation,weight,gender) VALUES('$username','$fname','$lname','$mail','$pass','$phone','$age','$occu','$weight','$gender')";
+$sql="INSERT INTO users(firstname,lastname,email,password,contact,age,occupation,weight,gender) VALUES('$fname','$lname','$mail','$pass','$phone','$age','$occu','$weight','$gender')";
 
 $check=mysqli_query($connect,$sql);
 

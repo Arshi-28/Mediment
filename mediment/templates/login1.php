@@ -17,14 +17,6 @@
 <?php
         include('common/navbar.php');
         
-    require_once "config.php";
-
-	if (isset($_SESSION['access_token'])) {
-		header('Location: appointment1.php');
-		exit();
-	}
-
-	$loginURL = $gClient->createAuthUrl();
 
         
         ?>

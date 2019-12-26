@@ -47,16 +47,13 @@
                 <div class="col-md-12">
                     
                      <div class="container" style="margin-bottom: 30px">
-                          <form name="myform" action="insert_users.php" onsubmit="validation()" method="post">
+                          <form name="myform" action="registration_process.php" onsubmit="validation()" method="post">
 
                             <label for="fname">First Name</label>
                             <input type="text" id="fname" name="first-name" required placeholder="Your first name..">
 
                             <label for="lname">Last Name</label>
                             <input type="text" id="lname" name="last-name" required placeholder="Your last name..">
-                            
-                            <label for="uname">User Name</label>
-                            <input type="text" id="uname" name="user-name" placeholder="Your user name..">
                             
                             <label for="phone">Phone</label>
                             <input type="text" id="phone" name="phone-number" placeholder="Your phone number..">
@@ -121,8 +118,7 @@
 		function validateForm() {
 
     var fn = document.forms["myform"]["first-name"];
-    var ln = document.forms["myform"]["last-name"];
-    var un = document.forms["myform"]["user-name"];        
+    var ln = document.forms["myform"]["last-name"];        
     var mail = document.forms["myform"]["email"];    
     var ph = document.forms["myform"]["phone"];  
     var g =  document.forms["myform"]["age"];  

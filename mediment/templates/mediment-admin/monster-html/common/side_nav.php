@@ -2,7 +2,7 @@
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
+                <nav class="sidebar-nav navbar">
                     <ul id="sidebarnav">
                         <li>
                             <a href="index.php" class="waves-effect"><i class="fa  fa-calendar m-r-10" aria-hidden="true"></i>Dashboard</a>
