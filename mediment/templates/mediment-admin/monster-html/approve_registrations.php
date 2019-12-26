@@ -1,5 +1,10 @@
 <?php
     include('common/html_head.php');
+    include('common/db_connection.php');
+    $sql="SELECT * FROM users where isdelete='0' and verified='0' order by created_at";
+    
+    $result=mysqli_query($connect,$sql);
+    $num_of_rows = mysqli_num_rows($result);
 ?>
 
 <body class="fix-header card-no-border">
@@ -45,7 +50,7 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Approve Registrations</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0"></h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                             <li class="breadcrumb-item active">Approve Registrations</li>
@@ -58,35 +63,54 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                <?php
+                if($num_of_rows > 0){
+                ?>
                 <div class="row">
                     <!-- column -->
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">List of Registrations to Approve</h4>
+                                <h4 class="card-title">List of Registrations to approve</h4>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Username</th>
+                                                <th>User ID</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
-                                                <th>Age</th>
+                                                <th>Email</th>
                                                 <th>Check</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            while($row=mysqli_fetch_assoc($result)){
+                                            ?>
                                             <tr>
-                                                <td>salmanz</td>
-                                                <td>Salman</td>
-                                                <td>Zaman</td>
-                                                <td>30</td>
-                                                <td><a href="registration.php"><i class="fa fa-check-square m-r-10" aria-hidden="true"></i></a></td>
+                                                <td><?php echo $row['id']; ?></td>
+                                                <td><?php echo ucwords(strtolower($row['firstname'])); ?></td>
+                                                <td><?php echo ucwords(strtolower($row['lastname'])); ?></td>
+                                                <td><?php echo $row['email']; ?></td>
+                                                <td><a href="registration.php?id=<?php echo $row['id'];?>"><i class="fa fa-check-square m-r-10" aria-hidden="true"></i></a></td>
                                             </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+                            <?php 
+                              }
+                              else if($num_of_rows == 0){
+                            ?>
+                               <div class='alert alert-danger'>
+                                No data found.
+                               </div>
+                               <?php
+                                }
+                               ?>
                         </div>
                     </div>
                 </div>

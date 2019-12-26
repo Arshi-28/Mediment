@@ -68,9 +68,9 @@
                             
                             <label for="gender">Gender</label>
                             <br>
-                            <input type="radio" name="gender" value="male" checked> Male<br>
-                            <input type="radio" name="gender" value="female"> Female<br>
-                            <input type="radio" name="gender" value="other"> Other
+                            <input type="radio" name="gender" value="Male" checked> Male<br>
+                            <input type="radio" name="gender" value="Female"> Female<br>
+                            <input type="radio" name="gender" value="Other"> Other
                             
                          <br><br>
                             
