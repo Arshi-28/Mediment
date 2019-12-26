@@ -80,13 +80,13 @@
                                     <div class="form-group">
                                         <label for="name" class="col-md-12">Name</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="name" name="sympname">
+                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="name" name="sympname" value="<?php echo $row3['sympname'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="det" class="col-md-12">Detail</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="det" name="detail">
+                                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line" id="det" name="detail" value="<?php echo $row3['detail'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
