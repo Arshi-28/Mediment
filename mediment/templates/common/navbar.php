@@ -1,9 +1,4 @@
-<?php
- session_start();
- if(!isset($_SESSION['fullname'])){
-  header('Location: login1.php?result=unauthorized');
- }
- ?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="index.php">Medico</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,8 +37,9 @@
         </form>
            <?php
            }else{
-           ?>        
-           <?php echo $_SESSION['fullname'];} ?>
-           <a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            echo $_SESSION['fullname'];?>
+               <a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+          <?php } ?>
+           
      </div>
     </nav>

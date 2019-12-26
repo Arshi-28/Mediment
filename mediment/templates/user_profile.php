@@ -32,6 +32,12 @@
 </style>
 
 <body>
+    <?php
+ session_start();
+ if(!isset($_SESSION['fullname'])){
+  header('Location: login1.php?result=unauthorized');
+ }
+ ?>
 
   <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">

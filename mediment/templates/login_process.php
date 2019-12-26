@@ -19,6 +19,7 @@ if($username =='roksana' && $_POST['password']=='password'){
 }else{
     $row = mysqli_fetch_assoc($result);
 	$_SESSION['fullname'] = $row['firstname']." ".$row['lastname'];
+    $_SESSION['id'] = $row['id'];
 	header('Location: index.php');
 }
 ?>
