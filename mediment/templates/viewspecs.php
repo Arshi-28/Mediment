@@ -26,6 +26,7 @@ include('common/db_connection.php');
 
        
        $result=mysqli_query($connect,$sql);
+       $row = mysqli_fetch_array($result)
        
       ?>
     </header>
@@ -38,7 +39,7 @@ include('common/db_connection.php');
              
             
                 <div class="doctors">
-                <h1 style="font-weight: 500">View All doctors</h1><br>
+                <h1 style="font-weight: 500">Showing all doctors of <?php echo getSpec($row['specializationid']);?></h1><br>
              <div class="row justify-content-center text-center">
 
                    <div class="w3-container">
