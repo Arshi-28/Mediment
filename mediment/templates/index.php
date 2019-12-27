@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+
+include('common/db_connection.php');
+
+?> 
 <head>
     <meta charset="UTF-8">
     <title>Medico</title>
@@ -12,12 +15,15 @@
 
 </head>
 <body>
-     
-    <header>
-      <?php
-        include('common/navbar.php');
-        ?>
-</header>
+     <header>
+      <?php include('common/navbar.php');
+        $sql = "SELECT * FROM doctors WHERE specializationid=2";
+
+        $result=mysqli_query($connect,$sql);
+       $num_of_rows = mysqli_num_rows($result);
+      
+       
+      ?>
    
    <main>
        <div class="container-fluid p-0">
@@ -72,36 +78,24 @@
                 <div class="doctors">
                 <h1 style="font-weight: 500">Some of our doctors</h1><br>
              <div class="row justify-content-center text-center">
+
+              <?php while($row=mysqli_fetch_assoc($result)):?>
                   
                    <div class="col-md-4">
                        <div class="card" style="width: 20rem">
-                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
+                           <img src="img2.jpg" alt="" class="card-img-top">
                            <div class="card-body">
-                               <h4>Dr. Louisa</h4>
-                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
+                               <h4><?php echo $row['firstname'];?> <?php echo $row['lastname'];?></h4>
+                               <p><?php echo $row['education'];?></p>
+
                            </div>
                        </div>
                      </div> 
+                     <?php endwhile;?>
+
+                    
                      
-                      <div class="col-md-4">
-                       <div class="card" style="width: 20rem">
-                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
-                           <div class="card-body">
-                               <h4>Dr.Louisa</h4>
-                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
-                           </div>
-                       </div>
-                     </div> 
-                     
-                      <div class="col-md-4">
-                       <div class="card" style="width: 20rem">
-                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
-                           <div class="card-body">
-                               <h4>Dr.Louisa</h4>
-                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, repellat.</p>
-                           </div>
-                       </div>
-                     </div> 
+                
 
                    
                </div>
