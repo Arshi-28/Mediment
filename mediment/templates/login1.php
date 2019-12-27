@@ -73,7 +73,7 @@
                         <p class="site-desc">Find the best doctors brand medical suggestions at the click of a button</p>
                         
                         <div class="d-flex flex-row">
-                            <input type="button" value="Search Now" class="btn site-btn1 px-4 py-3 mr-4">
+                           <button onclick="window.location.href='/page2'">Search</button>
                         </div>
                     </div>
                </div>
@@ -122,7 +122,7 @@
 
 
                             <input type="submit" value="Login">
-                        <input type="button" onclick="window.location = '<?php echo $loginURL ?>';" value="Log In With Google" class="btn btn-danger">
+                      
                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
                             </fieldset>
                             </form>
