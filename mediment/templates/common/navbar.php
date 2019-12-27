@@ -16,9 +16,14 @@
               <li class="nav-item">
                    <a class="nav-link" href="doctor.php">Doctors</a>
               </li>
+              <?php if(isset($_SESSION['fullname'])){ ?>
               <li class="nav-item">
-                   <a class="nav-link" href="appointment1.php">Create Appointment</a>
+                   <a class="nav-link" href="listappointment.php">View your Appointments</a>
               </li>
+              <li class="nav-item">
+                   <a class="nav-link" href="user_profile.php">Your Profile</a>
+              </li>
+              <?php } ?>
               <li class="nav-item">
                    <a class="nav-link" href="contact.php">Contact Us</a>
               </li>
