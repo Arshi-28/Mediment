@@ -1,5 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+
+include('common/db_connection.php');
+
+
+$sql = "SELECT appointmentid, date, time FROM appointments";
+
+$search_result = mysqli_query($connect, $sql);
+$count = mysqli_num_rows($search_result);
+ ?> 
+
 <head>
     <meta charset="UTF-8">
     <title>Medico</title>
@@ -27,6 +36,7 @@ tr:hover {background-color:#f5f5f5;}
 
 </style>
 <body>
+
      
     <header>
        <?php session_start(); ?>
@@ -92,11 +102,17 @@ tr:hover {background-color:#f5f5f5;}
 
 
 
+<?php while($row = mysqli_fetch_array($search_result)):?>
+                <tr>
+                    <td><?php echo $row['appointmentid'];?></td>
+                    <td><?php echo $row['date'];?></td>
+                    <td><?php echo $row['time'];?></td>
+                    
+                </tr>
+                <?php endwhile;?>
+
 </table>
-
-
 </div>
-    
 <footer class="page-footer font-small blue">
 
   
