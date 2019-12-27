@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="css/doctor.css">
     <link rel="stylesheet" href="css/circle.css">
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+    type="text/javascript" charset="utf-8"></script>
 
 
 </head>
@@ -19,23 +24,16 @@
         ?>
 </header>
    
-   <main>
-     
-       <div class="section-1">
-           <div class="container text-center">
-            
-             
-            
-              
+   <main>           
     
     
-    
-    <div class="section-2">
+    <div class="section-1">
     
         <div class="container">
             <h1 style="padding-top:20px; margin-top: 20px; margin-bottom: 70px; text-align: center">Contact Us</h1>
             <div class="row">
                 <div class="col-md-5">
+                    <div style="width: 640px; height: 480px" id="mapContainer"></div>
                     <p style="text-align: left; margin-top: 20px; font-size: 20px">We'd love your feedback</p>
                     <p style="text-align: left; margin-top: 80px; font-size: 20px"> Dhaka, Bangadesh <br>
                         Phone:12345223 <br>
@@ -62,11 +60,29 @@
                             <input type="submit" value="Submit">
 
                           </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
-    </div>
-    </div>
+       <script>
+      // Initialize the platform object:
+      var platform = new H.service.Platform({
+        'apikey': 'zEUNvrKsBaDcXU2omT9b30JjTitCeS_V7gQ8hvns0gQ'
+      });
+
+      // Obtain the default map types from the platform object
+      var maptypes = platform.createDefaultLayers();
+
+      // Instantiate (and display) a map object:
+      var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.vector.normal.map,
+        {
+          zoom: 12,
+          center: { lng: 13.4, lat: 52.51 }
+        });
+    </script>
     
 <footer class="page-footer font-small blue">
 
