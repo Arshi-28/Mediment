@@ -44,7 +44,7 @@ include('common/db_connection.php');
     <li class="w3-bar">
       <img src="img.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
       <div class="w3-bar-item">
-        <span class="w3-large"> <?php echo $row['specid']; ?>. <?php echo ucwords(strtolower($row['name'])); ?> </span><br>
+        <span class="w3-large"><a href="viewspecs.php?id=<?php echo $row['specid'];?>"><?php echo $row['specid']; ?>. <?php echo ucwords(strtolower($row['name'])); ?> </span><br>
       </div>
 
     </li>
