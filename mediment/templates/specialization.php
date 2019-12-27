@@ -28,9 +28,14 @@ include('common/db_connection.php');
       ?>
     </header>
 
-<div class="w3-container">
-  <h2>Specialization</h2>
-  
+    <div class="container text-center">
+            
+             
+            
+                <div class="doctors">
+                <h1 style="font-weight: 500"> View Doctors by Specialization</h1><br>
+
+
  <ul class="w3-ul w3-card-4">
 
 
