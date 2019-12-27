@@ -73,6 +73,24 @@ include('common/db_connection.php');
     </div>
     </div>
 
+    <?php
+            function getHospital($id){
+                global $connect;
+                $sql = "SELECT * FROM hospitals WHERE hospitalid=".$id;
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['name'];
+            }
+            function getSpec($id){
+                global $connect;
+                $sql = "SELECT * FROM specialization WHERE specid=".$id;
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['name'];
+            }
+            
+            include('common/footer.php');
+            ?>
     
 <footer class="page-footer font-small blue">
 
