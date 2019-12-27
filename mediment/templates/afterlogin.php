@@ -34,6 +34,9 @@
                    <a class="nav-link" href="listappointment.php">View your Appointments</a>
               </li>
               <li class="nav-item">
+                   <a class="nav-link" href="user_profile.php">Your Profile</a>
+              </li>
+              <li class="nav-item">
                    <a class="nav-link" href="contact.php">Contact Us</a>
               </li>
               
