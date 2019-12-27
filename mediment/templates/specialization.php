@@ -17,7 +17,38 @@ include('common/db_connection.php');
 </head>
 <body>
 
+  <header>
+      <?php include('common/navbar.php');
+    
+    $sql="SELECT * FROM specialization WHERE isdelete='0' ORDER BY specid";
+    
+    $result=mysqli_query($connect,$sql);
+    $num_of_rows = mysqli_num_rows($result);
+       
+      ?>
+    </header>
+
+<div class="w3-container">
+  <h2>Specialization</h2>
   
+ <ul class="w3-ul w3-card-4">
+
+
+<?php
+   while($row=mysqli_fetch_assoc($result)): ?>
+    <li class="w3-bar">
+      <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large"> <?php echo $row['specid']; ?> <?php echo ucwords(strtolower($row['name'])); ?> </span><br>
+      </div>
+
+    </li>
+
+
+    <?php endwhile; ?>
+  </ul>
+
+</div>
 
 </body>
 </html>
