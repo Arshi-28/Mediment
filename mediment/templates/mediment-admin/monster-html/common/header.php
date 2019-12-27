@@ -1,7 +1,7 @@
 <?php
  session_start();
  if(!isset($_SESSION['fullname'])){
-  header('Location: copies/Login/index.php?result=unauthorized');
+  header('Location: ../../login1.php?result=unauthorized');
  }
  ?>
         <header class="topbar">
@@ -43,7 +43,8 @@
                     <!-- ============================================================== -->
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="profile-pic m-r-5" /><?php echo ($_SESSION['fullname']); ?></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/avatar.png" alt="user" class="profile-pic m-r-5" /><?php echo ($_SESSION['fullname']); ?></a>
+                            <a href="logout.php"><i class="fa fa-sign-out"></i></a>
                         </li>
                     </ul>
                 </div>

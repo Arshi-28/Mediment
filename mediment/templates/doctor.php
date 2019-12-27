@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/doctor.css">
     <link rel="stylesheet" href="css/circle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
 
 </head>

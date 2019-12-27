@@ -27,17 +27,17 @@ CREATE TABLE `appointments` (
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   `doctorid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
   `isdelete` char(1) DEFAULT '0',
   `verified` char(1) DEFAULT '0',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `userid` int(11) NOT NULL,
   PRIMARY KEY (`appointmentid`),
   UNIQUE KEY `appointmentid_UNIQUE` (`appointmentid`),
   KEY `fk_appointments_doctors1_idx` (`doctorid`),
-  KEY `fk_appointments_user1_idx` (`userid`),
+  KEY `fk_appointments_users1_idx` (`userid`),
   CONSTRAINT `fk_appointments_doctors1` FOREIGN KEY (`doctorid`) REFERENCES `doctors` (`doctorid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_appointments_user1` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_appointments_users1` FOREIGN KEY (`userid`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -69,7 +69,7 @@ CREATE TABLE `diseases` (
   UNIQUE KEY `diseaseid_UNIQUE` (`diseaseid`),
   KEY `fk_diseases_specialization1_idx` (`specid`),
   CONSTRAINT `fk_diseases_specialization1` FOREIGN KEY (`specid`) REFERENCES `specialization` (`specid`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,7 +78,6 @@ CREATE TABLE `diseases` (
 
 LOCK TABLES `diseases` WRITE;
 /*!40000 ALTER TABLE `diseases` DISABLE KEYS */;
-INSERT INTO `diseases` VALUES (1,'Pneumonia','Has fever',2,'0','2019-12-23 04:05:12','2019-12-23 04:05:12');
 /*!40000 ALTER TABLE `diseases` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,17 +123,17 @@ CREATE TABLE `doctors` (
   `lastname` varchar(45) DEFAULT NULL,
   `education` varchar(255) DEFAULT NULL,
   `hospitalid` int(11) NOT NULL,
+  `specializationid` int(11) NOT NULL,
   `isdelete` char(1) DEFAULT '0',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `specializationid` int(11) NOT NULL,
   PRIMARY KEY (`doctorid`),
   UNIQUE KEY `doctorid_UNIQUE` (`doctorid`),
   KEY `fk_doctors_hospitals1_idx` (`hospitalid`),
   KEY `fk_doctors_specialization1_idx` (`specializationid`),
   CONSTRAINT `fk_doctors_hospitals1` FOREIGN KEY (`hospitalid`) REFERENCES `hospitals` (`hospitalid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_doctors_specialization1` FOREIGN KEY (`specializationid`) REFERENCES `specialization` (`specid`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,7 +142,6 @@ CREATE TABLE `doctors` (
 
 LOCK TABLES `doctors` WRITE;
 /*!40000 ALTER TABLE `doctors` DISABLE KEYS */;
-INSERT INTO `doctors` VALUES (1,'Dr. Rubaiya','Ali','dhaka med',1,'0','2019-12-23 03:43:18','2019-12-23 03:43:18',1);
 /*!40000 ALTER TABLE `doctors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +162,7 @@ CREATE TABLE `hospitals` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`hospitalid`),
   UNIQUE KEY `hospitalid_UNIQUE` (`hospitalid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +171,6 @@ CREATE TABLE `hospitals` (
 
 LOCK TABLES `hospitals` WRITE;
 /*!40000 ALTER TABLE `hospitals` DISABLE KEYS */;
-INSERT INTO `hospitals` VALUES (1,'Apollo Hospital','02-55037242','Plot: 81 Block: E, Dhaka 1229','0','2019-12-23 03:38:31','2019-12-23 03:38:31');
 /*!40000 ALTER TABLE `hospitals` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,13 +189,13 @@ CREATE TABLE `reviews` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `rating` int(10) unsigned DEFAULT NULL,
-  `user_userid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
   PRIMARY KEY (`reviewid`),
   UNIQUE KEY `reviewid_UNIQUE` (`reviewid`),
   KEY `fk_reviews_doctors1_idx` (`doctorid`),
-  KEY `fk_reviews_user1_idx` (`user_userid`),
+  KEY `fk_reviews_users1_idx` (`userid`),
   CONSTRAINT `fk_reviews_doctors1` FOREIGN KEY (`doctorid`) REFERENCES `doctors` (`doctorid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_reviews_user1` FOREIGN KEY (`user_userid`) REFERENCES `user` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_reviews_users1` FOREIGN KEY (`userid`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -226,7 +223,7 @@ CREATE TABLE `specialization` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`specid`),
   UNIQUE KEY `specid_UNIQUE` (`specid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +232,6 @@ CREATE TABLE `specialization` (
 
 LOCK TABLES `specialization` WRITE;
 /*!40000 ALTER TABLE `specialization` DISABLE KEYS */;
-INSERT INTO `specialization` VALUES (1,'Dermatology','0','2019-12-22 21:38:47','2019-12-22 21:38:47'),(2,'Medicine','0','2019-12-22 22:04:11','2019-12-22 22:04:11');
 /*!40000 ALTER TABLE `specialization` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -255,7 +251,7 @@ CREATE TABLE `symptoms` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`symptomid`),
   UNIQUE KEY `symptomid_UNIQUE` (`symptomid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -264,36 +260,7 @@ CREATE TABLE `symptoms` (
 
 LOCK TABLES `symptoms` WRITE;
 /*!40000 ALTER TABLE `symptoms` DISABLE KEYS */;
-INSERT INTO `symptoms` VALUES (1,'Fever','Elevated temperature all over the body','0','2019-12-23 04:05:27','2019-12-23 04:05:27');
 /*!40000 ALTER TABLE `symptoms` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user`
---
-
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
-  `userid` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(200) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `usersid` int(11) NOT NULL,
-  PRIMARY KEY (`userid`),
-  UNIQUE KEY `email_UNIQUE` (`email`),
-  KEY `fk_user_users1_idx` (`usersid`),
-  CONSTRAINT `fk_user_users1` FOREIGN KEY (`usersid`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user`
---
-
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -307,6 +274,8 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(45) NOT NULL,
   `lastname` varchar(45) DEFAULT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `contact` varchar(11) DEFAULT NULL,
   `age` int(10) unsigned DEFAULT NULL,
   `occupation` varchar(45) DEFAULT NULL,
@@ -317,7 +286,8 @@ CREATE TABLE `users` (
   `isdelete` char(1) NOT NULL DEFAULT '0',
   `verified` char(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `userid_UNIQUE` (`id`)
+  UNIQUE KEY `userid_UNIQUE` (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -339,4 +309,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-23  4:05:59
+-- Dump completed on 2019-12-24 22:55:26

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="css/circle.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
 
 
@@ -47,16 +48,13 @@
                 <div class="col-md-12">
                     
                      <div class="container" style="margin-bottom: 30px">
-                          <form name="myform" action="insert_users.php" onsubmit="validation()" method="post">
+                          <form name="myform" action="registration_process.php" onsubmit="validation()" method="post">
 
                             <label for="fname">First Name</label>
                             <input type="text" id="fname" name="first-name" required placeholder="Your first name..">
 
                             <label for="lname">Last Name</label>
                             <input type="text" id="lname" name="last-name" required placeholder="Your last name..">
-                            
-                            <label for="uname">User Name</label>
-                            <input type="text" id="uname" name="user-name" placeholder="Your user name..">
                             
                             <label for="phone">Phone</label>
                             <input type="text" id="phone" name="phone-number" placeholder="Your phone number..">
@@ -71,9 +69,9 @@
                             
                             <label for="gender">Gender</label>
                             <br>
-                            <input type="radio" name="gender" value="male" checked> Male<br>
-                            <input type="radio" name="gender" value="female"> Female<br>
-                            <input type="radio" name="gender" value="other"> Other
+                            <input type="radio" name="gender" value="Male" checked> Male<br>
+                            <input type="radio" name="gender" value="Female"> Female<br>
+                            <input type="radio" name="gender" value="Other"> Other
                             
                          <br><br>
                             
@@ -121,8 +119,7 @@
 		function validateForm() {
 
     var fn = document.forms["myform"]["first-name"];
-    var ln = document.forms["myform"]["last-name"];
-    var un = document.forms["myform"]["user-name"];        
+    var ln = document.forms["myform"]["last-name"];        
     var mail = document.forms["myform"]["email"];    
     var ph = document.forms["myform"]["phone"];  
     var g =  document.forms["myform"]["age"];  

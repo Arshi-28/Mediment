@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="css/circle.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
 
 
@@ -14,9 +15,51 @@
         
      
     <header>
-<?php
-        include('common/navbar.php');
-        ?>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="index.php">Medico</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse"></div>
+       <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.php">Home</a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                   <a class="nav-link" href="doctor.php">Doctors</a>
+              </li>
+              <li class="nav-item">
+                   <a class="nav-link" href="appointment1.php">Create Appointment</a>
+              </li>
+              <li class="nav-item">
+                   <a class="nav-link" href="contact.php">Contact</a>
+              </li>
+              
+              
+          </ul>
+           <?php 
+           if(!isset($_SESSION['fullname'])){ ?>
+           <form action="" class="form-inline my-2 my-lg-0">
+            <button class="btn menu-right-btn border" >
+                <a href="user-registration.php">Register</a>                
+            </button>
+             <button class="btn menu-left-btn border" >
+                <a href="login1.php">Login</a>               
+            </button>
+        </form>
+           <?php
+           }else{
+           ?>        
+           <?php echo $_SESSION['fullname'];?>
+           <a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+          <?php } ?>
+           
+     </div>
+    </nav>
 </header>
    
    <main>
@@ -34,6 +77,21 @@
                </div>
            </div>
        </div>
+       <?php
+    if(isset($_GET['result']) && $_GET['result']=='err'){
+    ?>
+    <div class="alert alert-danger">
+      Invalid username and/or password.
+    </div>
+    <?php
+      }else if(isset($_GET['result']) && $_GET['result']=='unauthorized'){
+        ?>
+        <div class="alert alert-danger">
+          Access unauthorised.
+        </div>
+        <?php
+      }
+    ?>
        
       
     
@@ -47,13 +105,13 @@
                 <div class="col-md-12">
                     
                      <div class="container" style="margin-bottom: 30px">
-                          <form action="">
+                          <form action="login_process.php" method="post">
                             <fieldset>
-                            <label for="uname">User Name</label>
-                            <input type="text" id="uname" name="user-name" placeholder="Your user name..">
+                            <label for="uname">E-mail:</label>
+                            <input type="text" id="uname" name="user-name" placeholder="Your e-mail address..">
 
                             <label for="password">
-                                Password
+                                Password:
                             </label>
                           
                             <input type="password" id="password" name="password" placeholder="Your password is..">
@@ -62,7 +120,7 @@
 
 
                             <input type="submit" value="Login">
-                            <input type="submit" value="Login with Facebook">
+                        <input type="button" onclick="window.location = '<?php echo $loginURL ?>';" value="Log In With Google" class="btn btn-danger">
                             </fieldset>
                             </form>
             </div>

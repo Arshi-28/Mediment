@@ -1,5 +1,11 @@
 <?php
     include('common/html_head.php');
+    include('common/db_connection.php');
+    $id = $_GET['id'];
+    $sql="SELECT * FROM users where id=".$id;
+    
+    $result=mysqli_query($connect,$sql);
+    $row=mysqli_fetch_assoc($result); 
 ?>
 
 <body class="fix-header card-no-border">
@@ -61,63 +67,53 @@
                 <!-- ============================================================== -->
                 <div class="card">
                             <div class="card-block">
-                                <form class="form-horizontal form-material">
+                                <form class="form-horizontal form-material" action="approve_reg_process.php?id=<?php echo $id;?>" method="post">
                                     <div class="form-group">
                                         <label class="col-md-12">First Name</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="Johnathan" class="form-control form-control-line">
+                                            <input type="text" class="form-control form-control-line" disabled value="<?php echo $row['firstname'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Last Name</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="Doe" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="example-username" class="col-md-12">User Name</label>
-                                        <div class="col-md-12">
-                                            <input type="text" placeholder="johnathan123" class="form-control form-control-line" name="example-username" id="example-email">
+                                            <input type="text" class="form-control form-control-line" disabled value="<?php echo $row['lastname'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="example-email" class="col-md-12">Email</label>
                                         <div class="col-md-12">
-                                            <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email">
+                                            <input type="email" class="form-control form-control-line" name="example-email" id="example-email" disabled value="<?php echo $row['email'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Age</label>
                                         <div class="col-md-12">
-                                            <input type="number" value="Age" class="form-control form-control-line">
+                                            <input type="number" class="form-control form-control-line" disabled value="<?php echo $row['age'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Phone No</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="123 456 7890" class="form-control form-control-line">
+                                            <input type="text" class="form-control form-control-line" disabled value="<?php echo $row['contact'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="example-occupation" class="col-md-12">Occupation</label>
                                         <div class="col-md-12">
-                                            <input type="text" class="form-control form-control-line" name="occupation" id="example-occupation">
+                                            <input type="text" class="form-control form-control-line" name="occupation" id="example-occupation" disabled value="<?php echo $row['occupation'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="example-weight" class="col-md-12">Weight</label>
                                         <div class="col-md-12">
-                                            <input type="number" class="form-control form-control-line" name="weight" id="example-weight">
+                                            <input type="number" class="form-control form-control-line" name="weight" id="example-weight" disabled value="<?php echo $row['weight'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="example-gender" class="col-md-12">Gender</label>
+                                        <label class="col-md-12">Gender</label>
                                         <div class="col-md-12">
-                                            <select class="form-control form-control-line" id="example-gender" name="gender">
-                                                <option value="0">Male</option>
-                                                <option value="1">Female</option>
-                                                <option value="2">Other</option>
-                                            </select>             
+                                            <input type="text" class="form-control form-control-line" disabled value="<?php echo $row['gender'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">

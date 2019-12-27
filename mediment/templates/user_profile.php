@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html>
+<?php
+
+include('common/db_connection.php');
+
+
+
+?> 
 <head>
 	<title>User Profile</title>
 
@@ -10,67 +15,23 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
 </head>
-	
-<style>
-	body {
-	    background-image:  url(" ");
-	    background-repeat: no-repeat;
-	    background-position: center;
-	    background-size: cover;
-	    background-attachment: fixed;
-	}
-	li {
-	    list-style: none;
-	}
-	li {
-	    margin-bottom:10px;
-	    }  
-
-</style>
 
 <body>
+ 
 
   <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Medico</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse"></div>
-       <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                   <a class="nav-link" href="#">Doctors</a>
-              </li>
-              <li class="nav-item">
-                   <a class="nav-link" href="#">Contact</a>
-              </li>
-              
-          </ul>
-    
-        <form action="" class="form-inline my-2 my-lg-0">
-            <button class="btn menu-right-btn border" type="submit">
-                Register                
-            </button>
-             <button class="btn menu-left-btn border" type="submit">
-                Login               
-            </button>
-        </form>
-     </div>
-    </nav>
+      <?php include('common/navbar.php');
+        $sql = "SELECT firstname, lastname, contact, age, gender, email FROM users WHERE id=".$_SESSION['id'];
+
+        $search_result = mysqli_query($connect, $sql);
+        $count = mysqli_num_rows($search_result);
+        $row = mysqli_fetch_array($search_result);
+      ?>
 </header>
 
-  <div class="container">
-      
-  </div>
 
 <div class="container">    
     <div class="jumbotron">
@@ -89,15 +50,24 @@
               			<p>  <h2> </h2></p>
               		</div>
                 <hr>
+
+                
+                
+                
               		<ul class="container details">
-                		<li><p><span class="glyphicon glyphicon-user" style="width:50px;"></span>Name: 
-                		</p></li>                          		
-               			<li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>E-mail:  
+                		<li><p><span class="glyphicon glyphicon-user" style="width:50px;"></span>First Name: 
+                      <?php echo $row['firstname'];?>
+                		</p></li>    
+                    <li><p><span class="glyphicon glyphicon-user" style="width:50px;"></span>Last Name: <?php echo $row['lastname'];?>
+                    </p></li>                        		
+               			<li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>E-mail:  <?php echo $row['email'];?>
                			</p></li>
-                		<li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Phone number:
+                		<li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Phone number:<?php echo $row['contact'];?>
                 		</p></li>
-                		<li><p><span class="glyphicon glyphicon-map-marker" style="width:50px;"></span>Address:  
+                		<li><p><span class="glyphicon glyphicon-user" style="width:50px;"></span>Gender:  <?php echo $row['gender'];?>
                 		</p></li>
+                    <li><p><span class="glyphicon glyphicon-map-marker" style="width:50px;"></span>Age:  <?php echo $row['age'];?>
+
                 	</ul>
            		</div>
       	</div>
