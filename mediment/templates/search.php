@@ -17,7 +17,7 @@
    <h2 align="center">Doctor</h2><br />
    <div class="form-group">
     <div class="input-group">
-     <span class="input-group-addon">Search</span>
+     <span class="input-group-addon">Search Doctors</span>
      <input type="text" name="search_text" id="search_text" placeholder="Search doctors" class="form-control" />
     </div>
    </div>
