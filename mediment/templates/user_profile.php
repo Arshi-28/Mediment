@@ -3,10 +3,7 @@
 include('common/db_connection.php');
 
 
-$sql = "SELECT firstname, lastname, contact, age, gender, email FROM users";
 
-$search_result = mysqli_query($connect, $sql);
-$count = mysqli_num_rows($search_result);
 ?> 
 <head>
 	<title>User Profile</title>
@@ -23,63 +20,16 @@ $count = mysqli_num_rows($search_result);
 </head>
 
 <body>
-   <?php
- // session_start();
- // if(!isset($_SESSION['fullname'])){
- // header('Location: login1.php?result=unauthorized');
- //}
-   ?>
  
 
   <header>
-      <?php session_start(); ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="index.php">Medico</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse"></div>
-       <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="afterlogin.php">Home</a>
-              </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="afterlogin.php">About</a>
-              </li>
-              <li class="nav-item">
-                   <a class="nav-link" href="doctor.php">Doctors</a>
-              </li>
-              <li class="nav-item">
-                   <a class="nav-link" href="listappointment.php">View your Appointments</a>
-              </li>
-              <li class="nav-item">
-                   <a class="nav-link" href="user_profile.php">Your Profile</a>
-              </li>
-              <li class="nav-item">
-                   <a class="nav-link" href="contact.php">Contact Us</a>
-              </li>
-              
-              
-          </ul>
-           <?php 
-           if(!isset($_SESSION['fullname'])){ ?>
-           <form action="" class="form-inline my-2 my-lg-0">
-            <button class="btn menu-right-btn border" >
-                <a href="user-registration.php">Register</a>                
-            </button>
-             <button class="btn menu-left-btn border" >
-                <a href="login1.php">Login</a>               
-            </button>
-        </form>
-           <?php
-           }else{
-            echo $_SESSION['fullname'];?>
-               <a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
-          <?php } ?>
-           
-     </div>
-    </nav>
+      <?php include('common/navbar.php');
+        $sql = "SELECT firstname, lastname, contact, age, gender, email FROM users WHERE id=".$_SESSION['id'];
+
+        $search_result = mysqli_query($connect, $sql);
+        $count = mysqli_num_rows($search_result);
+        $row = mysqli_fetch_array($search_result);
+      ?>
 </header>
 
 
@@ -105,8 +55,6 @@ $count = mysqli_num_rows($search_result);
                 
                 
               		<ul class="container details">
-                    <?php while($row = mysqli_fetch_array($search_result)):?>
-
                 		<li><p><span class="glyphicon glyphicon-user" style="width:50px;"></span>First Name: 
                       <?php echo $row['firstname'];?>
                 		</p></li>    
@@ -119,7 +67,6 @@ $count = mysqli_num_rows($search_result);
                 		<li><p><span class="glyphicon glyphicon-user" style="width:50px;"></span>Gender:  <?php echo $row['gender'];?>
                 		</p></li>
                     <li><p><span class="glyphicon glyphicon-map-marker" style="width:50px;"></span>Age:  <?php echo $row['age'];?>
-                    <?php endwhile;?>
 
                 	</ul>
            		</div>
