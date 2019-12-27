@@ -9,6 +9,23 @@
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
 </head>
+
+<style>
+  table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}
+
+
+</style>
 <body>
      
     <header>
@@ -64,7 +81,18 @@
    
    <main>
        
-       
+       <h2>Your Appointments</h2>
+
+<table>
+  <tr>
+    <th>Doctor Name</th>
+    <th>Appointment Date</th>
+    <th>Appointment Time</th>
+  </tr>
+
+
+
+</table>
     
 <footer class="page-footer font-small blue">
 
