@@ -72,8 +72,8 @@
                         <h1 class="site-title">Welcome to Medico</h1><br>
                         <p class="site-desc">Find the best doctors brand medical suggestions at the click of a button</p>
                         
-                        <div class="d-flex flex-row">
-                           <button onclick="window.location.href='/page2'">Search</button>
+                      <div class="d-flex flex-row">
+                            <input type="button" value="Search Now" class="btn site-btn1 px-4 py-3 mr-4">
                         </div>
                     </div>
                </div>
@@ -146,7 +146,13 @@
     
    </main>
     
-    
+    <script>
+        function onSignIn(googleUser) {
+            var idToken = googleUser.getAuthResponse().id_token;
+                  window.location = "afterlogin.php";
+        
+        }
+</script>
     <script src="https://kit.fontawesome.com/d2f5a4ed19.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
