@@ -12,6 +12,10 @@
     type="text/javascript" charset="utf-8"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
     type="text/javascript" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 </head>
@@ -24,48 +28,49 @@
         ?>
 </header>
    
-   <main>           
-    
-    
-    <div class="section-1">
-    
-        <div class="container">
-            <h1 style="padding-top:20px; margin-top: 20px; margin-bottom: 70px; text-align: center">Contact Us</h1>
-            <div class="row">
-                <div class="col-md-5">
-                    <div style="width: 640px; height: 480px" id="mapContainer"></div>
-                    <p style="text-align: left; margin-top: 20px; font-size: 20px">We'd love your feedback</p>
-                    <p style="text-align: left; margin-top: 80px; font-size: 20px"> Dhaka, Bangadesh <br>
-                        Phone:12345223 <br>
-                        Address: 122 East Road.
-                    </p>
-                </div>
-                
-                <div class="col-md-7">
-                    
-                     <div class="container" style="margin-bottom: 30px">
-                          <form action="">
+   <main>   
 
-                            <label for="fname">First Name</label>
-                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-                            <label for="Email">Email</label>
-                            <input type="text" id="lname" name="email" placeholder="Your email..">
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+  <div class="w3-row">
+    <div class="w3-col m5">
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+      
+      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Dhaka, Bangladesh</p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +00 1515151515</p>
+      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  contact@medico.com</p>
+    </div>
+    <div class="w3-col m7">
+      <h3>Send us your thoughts. Your opinion matters!</h3>
+      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+      <div class="w3-section">      
+        <label>Name</label>
+        <input class="w3-input" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">      
+        <label>Email</label>
+        <input class="w3-input" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">      
+        <label>Message</label>
+        <input class="w3-input" type="text" name="Message" required>
+      </div>  
+      <input class="w3-check" type="checkbox" checked name="Like">
+      <label>Want email notifications?</label>
+      <button type="submit" class="w3-button w3-right w3-theme">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
 
-                    
+<div class="container text-center">
+                <div class="doctors">
+                <h1 style="font-weight: 500">Navigate using Maps!</h1><br>
+             <div class="row justify-content-center text-center">
 
-                            <label for="message">Message</label>
-                            <textarea name="message" placeholder="Write something.." style="height:200px"></textarea>
+<div style="width: 800px; height: 480px" id="mapContainer"></div>
 
-                            <input type="submit" value="Submit">
-
-                          </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       <script>
+<script>
       // Initialize the platform object:
       var platform = new H.service.Platform({
         'apikey': 'zEUNvrKsBaDcXU2omT9b30JjTitCeS_V7gQ8hvns0gQ'
@@ -80,28 +85,6 @@
         maptypes.vector.normal.map,
         {
           zoom: 12,
-          center: { lng: 13.4, lat: 52.51 }
+          center: { lng: 90.42, lat: 23.81 }
         });
     </script>
-    
-<footer class="page-footer font-small blue">
-
-  
-  <div class="footer-copyright text-center py-3">© Medico
-    <a href="https://mdbootstrap.com/education/bootstrap/"></a>
-  </div>
-  
-
-</footer>
-
-
-    
-   </main>
-    
-    
-    <script src="https://kit.fontawesome.com/d2f5a4ed19.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-</html>
