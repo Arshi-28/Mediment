@@ -16,7 +16,7 @@ if(isset($_POST["query"]))
   SELECT s.specid,s.name,d.doctorid,d.firstname,d.lastname,d.education
   FROM specializatoin AS s
   LEFT JOIN doctor AS d
-  ON s.specid=d.specid
+  ON s.specid=d.specializationid
   WHERE  LIKE '%".$search."%' ";
 }
 else
