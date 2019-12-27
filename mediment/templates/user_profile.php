@@ -3,7 +3,7 @@
 include('common/db_connection.php');
 
 
-$sql = "SELECT firstname, lastname, contact, age FROM users";
+$sql = "SELECT firstname, lastname, contact, age, gender, email FROM users";
 
 $search_result = mysqli_query($connect, $sql);
 $count = mysqli_num_rows($search_result);
@@ -112,12 +112,13 @@ $count = mysqli_num_rows($search_result);
                 		</p></li>    
                     <li><p><span class="glyphicon glyphicon-user" style="width:50px;"></span>Last Name: <?php echo $row['lastname'];?>
                     </p></li>                        		
-               			<li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>E-mail:  <?php echo $row['contact'];?>
+               			<li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>E-mail:  <?php echo $row['email'];?>
                			</p></li>
-                		<li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Phone number:<?php echo $row['age'];?>
+                		<li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Phone number:<?php echo $row['contact'];?>
                 		</p></li>
-                		<li><p><span class="glyphicon glyphicon-map-marker" style="width:50px;"></span>Address:  
+                		<li><p><span class="glyphicon glyphicon-user" style="width:50px;"></span>Gender:  <?php echo $row['gender'];?>
                 		</p></li>
+                    <li><p><span class="glyphicon glyphicon-map-marker" style="width:50px;"></span>Age:  <?php echo $row['age'];?>
                     <?php endwhile;?>
 
                 	</ul>
