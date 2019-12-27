@@ -1,7 +1,5 @@
 <?php
     include('common/html_head.php');
-    include('common/db_connection.php');
-    $sql="SELECT * FROM users where isdelete='0' and verified='0' order by created_at";
 ?>
 
 <body class="fix-header card-no-border">
