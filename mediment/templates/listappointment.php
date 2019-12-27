@@ -80,8 +80,8 @@ tr:hover {background-color:#f5f5f5;}
 </header>
    
    <main>
-       
-       <h2>Your Appointments</h2>
+        <div class="container text-center">
+       <h1 style="font-weight: 500">Your List of Appointments</h1><br>
 
 <table>
   <tr>
@@ -93,6 +93,9 @@ tr:hover {background-color:#f5f5f5;}
 
 
 </table>
+
+
+</div>
     
 <footer class="page-footer font-small blue">
 
