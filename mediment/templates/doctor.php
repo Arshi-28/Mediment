@@ -48,6 +48,7 @@ include('common/db_connection.php');
         <th>Education</th>
         <th>Hospital Name</th>
         <th>Specialization</th>
+        <th>Create Appointment</th>
       </tr>
     </thead>
 
@@ -58,6 +59,7 @@ include('common/db_connection.php');
                     <td><?php echo $row['education'];?></td>
                     <td><?php echo getHospital($row['hospitalid']);?></td>
                     <td><?php echo getSpec($row['specializationid']);?></td>
+                    <td><a href="appointment1.php"> Make an Appointment </a></td>
 
                  
                 </tr>
