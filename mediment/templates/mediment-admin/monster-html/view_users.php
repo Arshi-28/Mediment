@@ -1,5 +1,10 @@
 <?php
     include('common/html_head.php');
+    include('common/db_connection.php');
+    $sql="SELECT * FROM diseases WHERE isdelete='0' and verified='1'  ORDER BY diseaseid";
+    
+    $result=mysqli_query($connect,$sql);
+    $num_of_rows = mysqli_num_rows($result);
 ?>
 
 <body class="fix-header card-no-border">
@@ -82,15 +87,26 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Salman</td>
-                                                <td>Zaman</td>
-                                                <td>salmanz</td>
-                                                <td>salmanzaman@gmail.com</td>
-                                                <td>01912345678</td>
-                                                <td>30</td>
-                                                <td>Student</td>
-                                                <td>12</td>
-                                                <td>Male</td>
+                                              <td><?php echo ucwords(strtolower($row['firstname'])); ?></td>
+                                              
+                                              <td><?php echo ucwords(strtolower($row['lastname'])); ?></td>
+                                              
+                                               <td><?php echo $row['id']; ?></td>
+                                               
+                                                <td><?php echo $row['email']; ?></td>
+                                                
+                                                 <td><?php echo $row['contact']; ?></td>
+                                                 
+                                                  <td><?php echo $row['age']; ?></td>
+                                                  
+                                                   <td><?php echo $row['occupation']; ?></td>
+                                                   
+                                                    <td><?php echo $row['weight']; ?></td>
+                                                    
+                                                     <td><?php echo $row['gender']; ?></td>
+                                                     
+                                                     <td><a href="delete_users.php?id=<?php echo $row['id'];?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
+                                          
                                                 <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
                                         </tbody>
