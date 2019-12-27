@@ -40,7 +40,40 @@ include('common/db_connection.php');
 
                    <div class="w3-container">
 
+    <table class="w3-table-all w3-hoverable">
+    <thead>
+      <tr class="w3-light-grey">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Education</th>
+        <th>Hospital Name</th>
+        <th>Specialization</th>
+      </tr>
+    </thead>
+
+    <?php while($row=mysqli_fetch_assoc($result)):?>
+                <tr>
+                    <td><?php echo $row['firstname'];?></td>
+                    <td><?php echo $row['lastname'];?></td>
+                    <td><?php echo $row['education'];?></td>
+                    <td><?php echo getHospital($row['hospitalid']);?></td>
+                    <td><?php echo getSpec($row['specializationid']);?></td>
+
+                 
+                </tr>
+                <?php endwhile;?>
+  </table>
+</div>
+              </div>
+    
+    
+    
+    
    
+    </div>
+    </div>
+
+    
 <footer class="page-footer font-small blue">
 
   
