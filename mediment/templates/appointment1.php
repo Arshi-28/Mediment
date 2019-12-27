@@ -32,7 +32,7 @@
                         <p class="site-desc">Find the best doctors brand medical suggestions at the click of a button</p>
                         
                         <div class="d-flex flex-row">
-                            <input type="button" value="Search Now" class="btn site-btn1 px-4 py-3 mr-4">
+                         <input type="button" onclick="location.href='search.php';" value="Search Now" class="btn site-btn1 px-4 py-3 mr-4">
                         </div>
                     </div>
                </div>
