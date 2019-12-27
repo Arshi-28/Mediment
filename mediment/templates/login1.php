@@ -107,11 +107,11 @@
                      <div class="container" style="margin-bottom: 30px">
                           <form action="login_process.php" method="post">
                             <fieldset>
-                            <label for="uname">User Name</label>
-                            <input type="text" id="uname" name="user-name" placeholder="Your user name..">
+                            <label for="uname">E-mail:</label>
+                            <input type="text" id="uname" name="user-name" placeholder="Your e-mail address..">
 
                             <label for="password">
-                                Password
+                                Password:
                             </label>
                           
                             <input type="password" id="password" name="password" placeholder="Your password is..">
