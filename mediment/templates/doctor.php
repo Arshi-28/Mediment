@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+
+include('common/db_connection.php');
+
+?> 
 <head>
     <meta charset="UTF-8">
     <title>Medico</title>
@@ -8,15 +11,20 @@
     <link rel="stylesheet" href="css/circle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
 </head>
 <body>
-     
+      
     <header>
-      <?php
-        include('common/navbar.php');
-        ?>
+      <?php include('common/navbar.php');
+        $sql = "SELECT * FROM doctors ORDER BY specializationid";
+
+        $result=mysqli_query($connect,$sql);
+       $num_of_rows = mysqli_num_rows($result);
+       
+      ?>
     </header>
    
    <main>
@@ -27,147 +35,64 @@
              
             
                 <div class="doctors">
-                <h1 style="font-weight: 500">Some of the doctors</h1><br>
+                <h1 style="font-weight: 500">View All doctors</h1><br>
              <div class="row justify-content-center text-center">
-                  
-                   <div class="col-md-4">
-                       <div class="card" style="width: 20rem">
-                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
-                           <div class="card-body">
-                               <h4>Dr.Mahmudul Haque</h4>
-                               <p>Doctor Mahmudul  Haque is a senior physician of Opthalmology in Square Hospital.</p>
-                                <div class="d-flex flex-row">
-                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
-                        </div>
-                           </div>
-                       </div>
-                     </div> 
-                     
-                      <div class="col-md-4">
-                       <div class="card" style="width: 20rem">
-                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
-                           <div class="card-body">
-                               <h4>Dr.ShahabUddin Talukdar</h4>
-                               <p>Dr. ShahabUddin Talukdar is a senior cardiologist in Apollo Hospitals.</p>
-                                  <div class="d-flex flex-row">
-                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
-                        </div>
-                           </div>
-                       </div>
-                     </div> 
-                     
-                      <div class="col-md-4">
-                       <div class="card" style="width: 20rem">
-                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
-                           <div class="card-body">
-                               <h4>Dr.Shams Munwar</h4>
-                               <p>Dr. Shams Munwar is a senior cardiologist in Apollo Hospital. </p>
-                                  <div class="d-flex flex-row">
-                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
-                        </div>
-                           </div>
-                       </div>
-                     </div> 
 
-                   
-               </div>
-            </div>
-        </div> 
-    </div>
+                   <div class="w3-container">
+
+    <table class="w3-table-all w3-hoverable">
+    <thead>
+      <tr class="w3-light-grey">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Education</th>
+        <th>Hospital Name</th>
+        <th>Specialization</th>
+        <th>Create Appointment</th>
+      </tr>
+    </thead>
+
+    <?php while($row=mysqli_fetch_assoc($result)):?>
+                <tr>
+                    <td><?php echo $row['firstname'];?></td>
+                    <td><?php echo $row['lastname'];?></td>
+                    <td><?php echo $row['education'];?></td>
+                    <td><?php echo getHospital($row['hospitalid']);?></td>
+                    <td><?php echo getSpec($row['specializationid']);?></td>
+                    <td><a href="appointment1.php"> Make an Appointment </a></td>
+
+                 
+                </tr>
+                <?php endwhile;?>
+  </table>
+</div>
+              </div>
     
-     <div class="section-1">
-           <div class="container text-center">
+    
+    
+    
+   
+    </div>
+    </div>
+
+    <?php
+            function getHospital($id){
+                global $connect;
+                $sql = "SELECT * FROM hospitals WHERE hospitalid=".$id;
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['name'];
+            }
+            function getSpec($id){
+                global $connect;
+                $sql = "SELECT * FROM specialization WHERE specid=".$id;
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['name'];
+            }
             
-             
-            
-                <div class="doctors">
-             <div class="row justify-content-center text-center">
-                  
-                   <div class="col-md-4">
-                       <div class="card" style="width: 20rem">
-                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
-                           <div class="card-body">
-                               <h4>Dr. Hossain </h4>
-                               <p>Dr. Hossain is a dentist in The Dentistry department of Labaid Hospital</p>
-                                  <div class="d-flex flex-row">
-                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
-                        </div>
-                           </div>
-                       </div>
-                     </div> 
-                     
-                      <div class="col-md-4">
-                       <div class="card" style="width: 20rem">
-                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
-                           <div class="card-body">
-                               <h4>Dr.Nazmun Nahar</h4>
-                               <p>Dr. Nazmun Nahar is a psychologist in Square hospital</p>
-                                  <div class="d-flex flex-row">
-                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
-                        </div>
-                           </div>
-                       </div>
-                     </div> 
-                     
-                      <div class="col-md-4">
-                       <div class="card" style="width: 20rem">
-                           <img src="image/funny-doctor-syringe-isolated-on-260nw-756363862.webp" alt="" class="card-img-top">
-                           <div class="card-body">
-                               <h4>Prof. Dr. Atiya Sharmin</h4>
-                               <p>Prof. Dr. Atiya Sharmin is a senior consultant of gastroenterology in United Hospital.</p>
-                                  <div class="d-flex flex-row">
-                            <input type="button" value="Make Appointment" class="btn site-btn1 px-4 py-3 mr-4" href="appointment1.html">
-                        </div>
-                           </div>
-                       </div>
-                     </div> 
-
-                   
-               </div>
-            </div>
-        </div> 
-    </div>
-    
-    
-    
-    
-    <div class="section-2">
-    
-        <div class="container">
-            <h1 style="padding-top:20px; margin-top: 20px; margin-bottom: 70px; text-align: center">Contact Us</h1>
-            <div class="row">
-                <div class="col-md-5">
-                    <p style="text-align: left; margin-top: 20px; font-size: 20px">We'd love your feedback</p>
-                    <p style="text-align: left; margin-top: 80px; font-size: 20px"> Dhaka, Bangadesh <br>
-                        Phone:12345223 <br>
-                        Address: 122 East Road.
-                    </p>
-                </div>
-                
-                <div class="col-md-7">
-                    
-                     <div class="container" style="margin-bottom: 30px">
-                          <form action="">
-
-                            <label for="fname">First Name</label>
-                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-                            <label for="Email">Email</label>
-                            <input type="text" id="lname" name="email" placeholder="Your email..">
-
-                    
-
-                            <label for="message">Message</label>
-                            <textarea name="message" placeholder="Write something.." style="height:200px"></textarea>
-
-                            <input type="submit" value="Submit">
-
-                          </form>
-            </div>
-        </div>
-        </div>
-    </div>
-    </div>
+            include('common/footer.php');
+            ?>
     
 <footer class="page-footer font-small blue">
 
