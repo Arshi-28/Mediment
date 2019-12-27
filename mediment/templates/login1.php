@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="css/circle.css">
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="927073325752-q9df0aqft13nomp94qijjru6a7htkpg1.apps.googleusercontent.com">
 
 
 
@@ -121,6 +123,7 @@
 
                             <input type="submit" value="Login">
                         <input type="button" onclick="window.location = '<?php echo $loginURL ?>';" value="Log In With Google" class="btn btn-danger">
+                           <div class="g-signin2" data-onsuccess="onSignIn"></div>
                             </fieldset>
                             </form>
             </div>
