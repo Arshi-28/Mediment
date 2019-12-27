@@ -1,5 +1,13 @@
-<!DOCTYPE html>
-<html>
+<?php
+
+include('common/db_connection.php');
+
+
+$sql = "SELECT firstname, lastname, contact, age FROM users";
+
+$search_result = mysqli_query($connect, $sql);
+$count = mysqli_num_rows($search_result);
+?> 
 <head>
 	<title>User Profile</title>
 
@@ -92,15 +100,26 @@
               			<p>  <h2> </h2></p>
               		</div>
                 <hr>
+
+                
+                
+                
               		<ul class="container details">
-                		<li><p><span class="glyphicon glyphicon-user" style="width:50px;"></span>Name: 
-                		</p></li>                          		
-               			<li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>E-mail:  
+                    <?php while($row = mysqli_fetch_array($search_result)):?>
+
+                		<li><p><span class="glyphicon glyphicon-user" style="width:50px;"></span>First Name: 
+                      <?php echo $row['firstname'];?>
+                		</p></li>    
+                    <li><p><span class="glyphicon glyphicon-user" style="width:50px;"></span>Last Name: <?php echo $row['lastname'];?>
+                    </p></li>                        		
+               			<li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>E-mail:  <?php echo $row['contact'];?>
                			</p></li>
-                		<li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Phone number:
+                		<li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Phone number:<?php echo $row['age'];?>
                 		</p></li>
                 		<li><p><span class="glyphicon glyphicon-map-marker" style="width:50px;"></span>Address:  
                 		</p></li>
+                    <?php endwhile;?>
+
                 	</ul>
            		</div>
       	</div>
