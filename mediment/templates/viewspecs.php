@@ -18,6 +18,78 @@ include('common/db_connection.php');
 <body>
       
     
+      <header>
+     
+    </header>
+   
+   <main>
+     
+       <div class="section-1">
+           <div class="container text-center">
+            
+             
+            
+                <div class="doctors">
+                <h1 style="font-weight: 500">View All doctors</h1><br>
+             <div class="row justify-content-center text-center">
+
+                   <div class="w3-container">
+
+    <table class="w3-table-all w3-hoverable">
+    <thead>
+      <tr class="w3-light-grey">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Education</th>
+        <th>Hospital Name</th>
+        <th>Specialization</th>
+        <th>Create Appointment</th>
+      </tr>
+    </thead>
+
+                
+    <?php while($row = mysqli_fetch_array($result)): ?>
+                <tr>
+                    <td><?php echo $row['firstname'];?></td>
+                    <td><?php echo $row['lastname'];?></td>
+                    <td><?php echo $row['education'];?></td>
+                    <td><?php echo getHospital($row['hospitalid']);?></td>
+                    <td><?php echo getSpec($row['specializationid']);?></td>
+                    <td><a href="appointment1.php"> Make an Appointment </a></td>
+
+                 
+                </tr>
+                <?php endwhile;?>
+  </table>
+</div>
+              </div>
+    
+    
+    
+    
+   
+    </div>
+    </div>
+
+    <?php
+            function getHospital($id){
+                global $connect;
+                $sql = "SELECT * FROM hospitals WHERE hospitalid=".$id;
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['name'];
+            }
+            function getSpec($id){
+                global $connect;
+                $sql = "SELECT * FROM specialization WHERE specid=".$id;
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['name'];
+            }
+            
+            include('common/footer.php');
+            ?>
+    
 <footer class="page-footer font-small blue">
 
   
