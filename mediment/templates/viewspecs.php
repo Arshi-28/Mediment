@@ -19,7 +19,15 @@ include('common/db_connection.php');
       
     
       <header>
-     
+      <?php include('common/navbar.php');
+        $id =$_GET['id'];
+      $sql=" SELECT * FROM doctors WHERE specializationid=$id ";
+      
+
+       
+       $result=mysqli_query($connect,$sql);
+       
+      ?>
     </header>
    
    <main>
