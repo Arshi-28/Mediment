@@ -17,6 +17,11 @@
 <header>
 <?php
         include('common/navbar.php');
+    include 'common/db_connection.php';
+    $id = $_GET['id'];
+    $sql = "SELECT firstname, lastname FROM doctors WHERE doctorid='$id'";
+    $result = mysqli_query($connect,$sql);
+    $row=mysqli_fetch_assoc($result);
     if(!isset($_SESSION['fullname'])){
   header('Location: login1.php?result=unauthorized');
  }
@@ -51,16 +56,16 @@
                 <div class="col-md-12">
                     
                      <div class="container" style="margin-bottom: 30px">
-                          <form action="">
+                          <form action="appointment_process.php?id1=<?php echo $id;?>&id2=<?php echo $_SESSION['id'];?>" method="post">
 
                             <label for="dname">Doctor Name</label>
-                            <input type="text" id="dname" name="doctor-name"  disabled placeholder="Doctor's name..">
+                            <input type="text" id="dname" name="doctor-name"  disabled value="<?php echo $row['firstname']." ".$row['lastname']; ?>">
 
                             
                             
                             
                             Enter a date after 16-12-2019:<br>
-                            <input type="date" name="bday" min="2000-01-02">
+                            <input type="date" name="date" min="2000-01-02">
                              
                              <label for="time">Time</label>
                             
@@ -71,8 +76,8 @@
                             
 
                           </form>
-            </div>
-        </div>
+                    </div>
+                </div>
         </div>
     </div>
     </div>

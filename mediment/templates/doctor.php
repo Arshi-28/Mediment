@@ -59,7 +59,7 @@ include('common/db_connection.php');
                     <td><?php echo $row['education'];?></td>
                     <td><?php echo getHospital($row['hospitalid']);?></td>
                     <td><?php echo getSpec($row['specializationid']);?></td>
-                    <td><a href="appointment1.php"> Make an Appointment </a></td>
+                    <td><a href="appointment1.php?id=<?php echo $row['doctorid'];?>"> Make an Appointment </a></td>
 
                  
                 </tr>
