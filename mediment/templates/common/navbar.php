@@ -16,6 +16,9 @@
               <li class="nav-item">
                    <a class="nav-link" href="doctor.php">Doctors</a>
               </li>
+              <li class="nav-item">
+                   <a class="nav-link" href="specialization.php">Search by Specialization</a>
+              </li>
               <?php if(isset($_SESSION['fullname'])){ ?>
               <li class="nav-item">
                    <a class="nav-link" href="listappointment.php">View your Appointments</a>
