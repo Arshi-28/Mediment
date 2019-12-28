@@ -17,7 +17,15 @@
 	$_SESSION['username'] = $userData['username'];
 	$_SESSION['password'] = $userData['password'];
 
-
-	header('Location: appointment1.php');
+    include 'common/db_connection.php';
+    $user = $_SESSION['username'];
+    $sql = "SELECT * FROM users WHERE email='$user'";
+        $search_result = mysqli_query($connect, $sql);
+        $num_of_rows = mysqli_num_rows($search_result);
+        if($num_of_rows==0){
+            header('Location: details.php');
+        }else{
+            header('Location: afterlogin.php?id=<?php echo $user;?>');
+        }
 	exit();
 ?>
