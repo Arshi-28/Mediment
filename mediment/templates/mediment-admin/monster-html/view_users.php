@@ -1,7 +1,7 @@
 <?php
     include('common/html_head.php');
     include('common/db_connection.php');
-    $sql="SELECT * FROM diseases WHERE isdelete='0' and verified='1'  ORDER BY diseaseid";
+    $sql="SELECT * FROM users WHERE isdelete='0' and verified='1'  ORDER BY id";
     
     $result=mysqli_query($connect,$sql);
     $num_of_rows = mysqli_num_rows($result);
@@ -63,6 +63,9 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                <?php
+                if($num_of_rows > 0){
+                ?>
                 <div class="row">
                     <!-- column -->
                     <div class="col-sm-12">
@@ -86,6 +89,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            while($row=mysqli_fetch_assoc($result)){
+                                            ?>
                                             <tr>
                                               <td><?php echo ucwords(strtolower($row['firstname'])); ?></td>
                                               
@@ -107,12 +113,24 @@
                                                      
                                                      <td><a href="delete_users.php?id=<?php echo $row['id'];?>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                           
-                                                <td><a class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
                                             </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+                            <?php 
+                              }
+                              else if($num_of_rows == 0){
+                            ?>
+                               <div class='alert alert-danger'>
+                                No data found.
+                               </div>
+                               <?php
+                                }
+                               ?>
                         </div>
                     </div>
                 </div>

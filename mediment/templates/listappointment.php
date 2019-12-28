@@ -1,9 +1,6 @@
 <?php
 
 include('common/db_connection.php');
-
-
-
  ?> 
 
 <head>
@@ -39,7 +36,7 @@ tr:hover {background-color:#f5f5f5;}
        <?php include 'common/navbar.php';?>
         <?php
         $id = $_SESSION['id'];
-        $sql = "SELECT appointmentid, date, time FROM appointments WHERE userid='$id' AND verified='1'";
+        $sql = "SELECT * FROM appointments WHERE userid='$id'";
         $search_result = mysqli_query($connect, $sql);
         $num_of_rows = mysqli_num_rows($search_result);
         ?>
@@ -56,6 +53,7 @@ tr:hover {background-color:#f5f5f5;}
     <th>Doctor Name</th>
     <th>Appointment Date</th>
     <th>Appointment Time</th>
+    <th>Approval</th>
   </tr>
 
 
@@ -65,7 +63,7 @@ tr:hover {background-color:#f5f5f5;}
                     <td><?php echo $row['appointmentid'];?></td>
                     <td><?php echo $row['date'];?></td>
                     <td><?php echo $row['time'];?></td>
-                    
+                    <td><?php echo getApprove($row['verified']);?></td>
                 </tr>
                 <?php endwhile;?>
 
@@ -80,6 +78,15 @@ tr:hover {background-color:#f5f5f5;}
                          </div>
                         <?php
                         }
+            function getApprove($ver){
+                if($ver=='0'){
+                    return "Waiting Approval";
+                }else if($ver=='1'){
+                    return "Approved";
+                }else{
+                    return "Not Approved";
+                }
+            }
                         ?>
 <footer class="page-footer font-small blue">
 

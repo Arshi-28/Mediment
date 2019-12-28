@@ -2,14 +2,13 @@
 include('common/db_connection.php');
 
 $id=$_GET['id'];
-$nm=$_POST['name'];
-$sid=$_POST['specid'];
+$nm=$_POST['specname'];
 
-$sql="UPDATE specialization SET name='$nm', specid='$sid', 
+$sql="UPDATE specialization SET name='$nm' WHERE specid='$id'"; 
 if(mysqli_query($connect,$sql)){
-    header("Location:view_doctors.php?result=updated");
+    header("Location:view_specs.php?result=updated");
 }else{
-    header("Location:view_doctors.php?result=failupdate");
+    header("Location:view_specs.php?result=failupdate");
 }
 
 

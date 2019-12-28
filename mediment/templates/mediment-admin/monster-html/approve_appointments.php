@@ -1,5 +1,11 @@
 <?php
     include('common/html_head.php');
+    include('common/db_connection.php');
+    $id = $_GET['id'];
+    $sql="SELECT * FROM appointments where appointmentid=".$id;
+    
+    $result=mysqli_query($connect,$sql);
+    $row=mysqli_fetch_assoc($result);
 ?>
 
 <body class="fix-header card-no-border">
@@ -61,53 +67,47 @@
                 <!-- ============================================================== -->
                 <div class="card">
                             <div class="card-block">
-                                <form class="form-horizontal form-material">
+                                <form class="form-horizontal form-material" action="approve_app_process.php?id=<?php echo $id;?>" method="post">
                                     <div class="form-group">
                                         <label class="col-md-12">Appointment ID</label>
                                         <div class="col-md-12">
-                                            <input type="text" name="id" class="form-control form-control-line">
+                                            <input type="text" name="id" class="form-control form-control-line" disabled value="<?php echo $row['appointmentid']; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">User ID</label>
                                         <div class="col-md-12">
-                                            <input type="text" name="userid" class="form-control form-control-line">
+                                            <input type="text" name="userid" class="form-control form-control-line" disabled value="<?php echo $row['userid']; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-12">Doctor ID</label>
+                                        <label class="col-md-12">Doctor Name</label>
                                         <div class="col-md-12">
-                                            <input type="text" name="doctorid" class="form-control form-control-line">
+                                            <input type="text" name="doctorid" class="form-control form-control-line" disabled value="<?php echo getDoctor($row['doctorid']); ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="example-email" class="col-md-12">Appointment Date</label>
                                         <div class="col-md-12">
-                                            <input type="date" class="form-control form-control-line" name="date">
+                                            <input type="text" class="form-control form-control-line" name="date" disabled value="<?php echo $row['date']; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Appointment Time</label>
                                         <div class="col-md-12">
-                                            <input type="time" value="13:00" class="form-control form-control-line">
+                                            <input type="time" class="form-control form-control-line" disabled value="<?php echo $row['time']; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Hospital Phone No</label>
                                         <div class="col-md-12">
-                                            <input type="text" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Message</label>
-                                        <div class="col-md-12">
-                                            <textarea rows="5" class="form-control form-control-line"></textarea>
+                                            <input type="text" class="form-control form-control-line" disabled value="<?php echo getHospital($row['doctorid']); ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-12">
                                             <input type="submit" class="btn btn-success" value="Approve Appointment">
-                                            <input type="button" class="btn btn-danger" value="Disapprove Appointment">
+                                            <a href="disapprove_app.php?id=<?php echo $id; ?>"><input type="button" class="btn btn-danger" value="Disapprove Appointment"></a>
                                         </div>
                                     </div>
                                 </form>
@@ -123,6 +123,20 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <?php
+            function getDoctor($id){
+                global $connect;
+                $sql = "SELECT * FROM doctors WHERE doctorid=".$id;
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['firstname']." ".$row['lastname'];
+            }
+            function getHospital($id){
+                global $connect;
+                $sql = "SELECT * FROM hospitals WHERE hospitalid=(SELECT hospitalid FROM doctors WHERE doctorid='$id')";
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['contact'];
+            }
             include('common/footer.php');
             ?>
 </body>

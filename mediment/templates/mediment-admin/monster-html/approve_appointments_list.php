@@ -1,5 +1,10 @@
 <?php
     include('common/html_head.php');
+    include('common/db_connection.php');
+    $sql="SELECT * FROM appointments WHERE isdelete='0' AND verified='0'";
+    
+    $result=mysqli_query($connect,$sql);
+    $num_of_rows = mysqli_num_rows($result);
 ?>
 
 <body class="fix-header card-no-border">
@@ -58,6 +63,9 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                <?php
+                if($num_of_rows > 0){
+                ?>
                 <div class="row">
                     <!-- column -->
                     <div class="col-sm-12">
@@ -76,19 +84,35 @@
                                                 <th>Check</th>
                                             </tr>
                                         </thead>
+                                        <?php
+                                            while($row=mysqli_fetch_assoc($result)){
+                                        ?>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>salman</td>
-                                                <td>1</td>
-                                                <td>2019-12-12</td>
-                                                <td>08:00 AM</td>
-                                                <td><a href="approve_appointments.php"><i class="fa fa-check-square m-r-10" aria-hidden="true"></i></a></td>
+                                                <td><?php echo $row['appointmentid']; ?></td>
+                                                <td><?php echo getDoctor($row['doctorid']); ?></td>
+                                                <td><?php echo $row['userid']; ?></td>
+                                                <td><?php echo $row['date']; ?></td>
+                                                <td><?php echo $row['time']; ?></td>
+                                                <td><a href="approve_appointments.php?id=<?php echo $row['appointmentid']; ?>"><i class="fa fa-check-square m-r-10" aria-hidden="true"></i></a></td>
                                             </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+                            <?php 
+                              }
+                              else if($num_of_rows == 0){
+                               ?>
+                               <div class='alert alert-danger'>
+                                No data found.
+                               </div>
+                               <?php
+                                }
+                               ?>
                         </div>
                     </div>
                 </div>
@@ -103,6 +127,13 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <?php
+            function getDoctor($id){
+                global $connect;
+                $sql = "SELECT * FROM doctors WHERE doctorid=".$id;
+                $result=mysqli_query($connect,$sql);
+                $row=mysqli_fetch_assoc($result);
+                return $row['firstname']." ".$row['lastname'];
+            }
             include('common/footer.php');
             ?>
 </body>

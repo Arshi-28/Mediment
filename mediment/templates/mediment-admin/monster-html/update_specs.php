@@ -1,14 +1,11 @@
 <?php
     include('common/html_head.php');
     include('common/db_connection.php');
-    $sql="SELECT * FROM specialization WHERE isdelete='0' ORDER BY name";
     
     $id =$_GET['id'];
-    $sql3="SELECT * FROM specialization WHERE isdelete='0' AND specid=".$id;
+    $sql="SELECT * FROM specialization WHERE isdelete='0' AND specid=".$id;
     $result=mysqli_query($connect,$sql);
-    $result2=mysqli_query($connect,$sql2);
-    $result3=mysqli_query($connect,$sql3);
-    $row3=mysqli_fetch_assoc($result3);
+    $row=mysqli_fetch_assoc($result);
 ?>
 
 <body class="fix-header card-no-border">
@@ -54,10 +51,11 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Add Specialization</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Update Specialization</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Add Specializations</li>
+                            <li class="breadcrumb-item active">View Specializations</li>
+                            <li class="breadcrumb-item active">Edit Specializations</li>
                         </ol>
                     </div>
                 </div>
@@ -67,27 +65,18 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <?php
-                if(isset($_GET['result'])){
-                    if($_GET['result']=='success'){
-                        echo "<div class='alert alert-success'>Data has been submitted</div>";
-                    }else if($_GET['result']=='fail'){
-                        echo "<div class='alert alert-danger'>Data has not been submitted</div>";
-                    }
-                }
-                ?>
                 <div class="card">
                             <div class="card-block">
-                                <form class="form-horizontal form-material" action="update_spec_process.php" method="post">
+                                <form class="form-horizontal form-material" action="update_specs_process.php?id=<?php echo $id; ?>" method="post">
                                     <div class="form-group">
                                         <label for="name" class="col-md-12">Specialization Name</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="Cardiology" class="form-control form-control-line" id="name" name="specname" value="<?php echo $row3['spec'];?>">
+                                            <input type="text" placeholder="Cardiology" class="form-control form-control-line" id="name" name="specname" value="<?php echo $row['name'];?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <input type="submit" class="btn btn-success" value="Add Specialization">
+                                            <input type="submit" class="btn btn-success" value="Update Specialization">
                                         </div>
                                     </div>
                                 </form>
