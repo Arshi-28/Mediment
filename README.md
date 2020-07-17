@@ -1,5 +1,4 @@
 # Mediment
-Web Dev Project for CSE 482
 <p> This repository has been created for the course project of Internet and Web Technology (CSE482) of North South University. Medico is a web application which allows you to find a doctor suitable for the user condition. At present,
 there is a gaping hole in the market, where the users have a hard time in trying to find the correct
 doctor and setting appointments. Medico aims to fix the problem of users having to waste time in
